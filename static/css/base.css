@@ -1,17 +1,52 @@
-/* fixed top navbar only on medium and up */
+:root {
+  --dark-logo-font: #424242;
+  --white: #ffffff;
+}
+
+body,
+nav ul a,
+nav .brand-logo {
+  color: var(--dark-logo-font);
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+@media (max-width: 350px) {
+    nav .brand-logo {
+        font-size: 0.8rem;
+      }
+    
+}
+
+@media (max-width: 600px) {
+    nav .brand-logo {
+        font-size: 1.2rem;
+      }
+    
+}
+
+  /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
-    .header-container {
-        padding-top: 164px;
-    }
+    .brand-logo {
+        margin-left: 20px;
+      }
+    
 }
 
 @media (max-width: 991px) {
-    .header-container {
-        padding-top: 116px;
-    }
-}
 
-body{
-    color: red;
-    background-color: yellow;
 }
