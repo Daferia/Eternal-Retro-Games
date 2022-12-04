@@ -5,9 +5,10 @@
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
-{% block content %}
+{% block inner_content %}
+<div class="card col-12">
 
-<h1>{% trans "Sign In" %}</h1>
+<div class="card-header font-dark fs-3">{% trans "Sign In" %}</div>
 
 {% get_providers as socialaccount_providers %}
 
@@ -22,7 +23,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
     {% include "socialaccount/snippets/provider_list.html" with process="login" %}
   </ul>
 
-  <div class="login-or">{% trans 'or' %}</div>
+  <div class="login-or dark-font">or</div>
 
 </div>
 
@@ -39,8 +40,11 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+  <a href="{% url 'home' %}" class="btn btn-outline-grey rounded-0">Home</a>
   <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+  <a class="button secondaryAction font-dark" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
 </form>
+
+</div>
 
 {% endblock %}
