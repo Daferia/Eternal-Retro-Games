@@ -1,6 +1,6 @@
 :root {
-  --dark-font: #424242;
-  --white: #ffffff;
+  --dark-font: rgb(66, 66, 66);
+  --white: rgb(255, 255, 255);
 }
 
 .font-white {
@@ -26,8 +26,9 @@ body {
 
 }
 
-header {
-  border-bottom: 2px solid var(--dark-font);
+header,
+.search-form {
+  border-bottom: 2px solid var(--dark-font) !important;
 }
 
 .header-container {
@@ -36,7 +37,7 @@ header {
 
 header,
 .dropdown-menu {
-  background-color: rgb(255, 255, 255, 0.8);
+  background-color: var(--white);
 }
 
 .dropdown-menu {
@@ -44,21 +45,17 @@ header,
   border: 1px solid var(--dark-font);
 }
 
-  /* Set the border color */
+  /* Set the border color  - code from Geeks for Geeks */
     
 .custom-toggler.navbar-toggler {
     border-color: var(--dark-font);
-}
-
-body {
-  color: var(--white);
 }
 
 /* Allauth form formatting */
 
 .allauth-form-inner-content .card{
   padding: 5%;
-  background-color: rgb(255, 255, 255, 0.8);
+  background-color: var(--white);
 }
 
 .allauth-form-inner-content .card-header{
@@ -85,7 +82,7 @@ body {
 
 .allauth-form-inner-content input {
   border-color: #000;
-  border-radius: 0;
+  border-radius: 5%;
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
@@ -110,7 +107,7 @@ body {
   user-select: none;
   background-color: var(--dark-font);
   border: 1px solid var(--dark-font);
-  border-radius: 0;
+  border-radius: 5%;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
@@ -162,8 +159,8 @@ body {
 /* Footer Styling */
 
 footer {
-  background-color: rgb(255, 255, 255, 0.8);
-  border-top: 1px solid var(--white);
+  background-color: var(--white);
+  border-top: 1px solid var(--dark-font);
   padding: 15px 0 0 0;
 }
 
