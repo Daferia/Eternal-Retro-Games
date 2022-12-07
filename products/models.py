@@ -28,9 +28,9 @@ class Product(models.Model):
     publisher = models.CharField(max_length=35, blank=True, null=True)
     user_review = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     developer = models.CharField(max_length=35, blank=True, null=True)
-    rating = models.CharField(max_length=1, blank=True, null=True)
+    rating = models.CharField(max_length=10, blank=True, null=True)
     selling_price = models.DecimalField(max_digits=6, decimal_places=2)
-    summary = models.TextField(null=True)
+    summary = models.TextField(null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)   
 
