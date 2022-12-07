@@ -1,14 +1,25 @@
 :root {
   --dark-font: rgb(66, 66, 66);
   --white: rgb(255, 255, 255);
+
+  --small: 130px;
+  --medium: 135px;
+  --large: 148px;
 }
 
 .font-white {
   color: var(--white);
 }
 
-.font-dark {
+.rating-star i {
+ color: rgb(255, 215, 0); 
+}
+
+.font-dark,
+.card-body,
+.list-group-item {
   color: var(--dark-font);
+  /* color: red; */
 }
 
 html {
@@ -19,12 +30,14 @@ body {
   background: url('/media/derek-story-jrqeb5o7H2U-unsplash-med.jpg') no-repeat center center fixed;
   background-size: cover;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column; 
-  color: var(--white);
+  height: 100%;
+  color: var(--dark-font);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
 
 }
+
 
 header,
 .search-form {
@@ -49,6 +62,26 @@ header,
     
 .custom-toggler.navbar-toggler {
     border-color: var(--dark-font);
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: var(--white);
+  z-index: -1;
+}
+
+.card-details {
+  align-content: center;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Allauth form formatting */
@@ -93,6 +126,7 @@ header,
   color: #aab7c4;
 }
 
+.shop-now-button,
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
   /* btn */
@@ -112,10 +146,22 @@ header,
   font-size: 1rem;
   line-height: 1.5;
 
+  
+
   /* Standard bootsrap btn transitions */
   transition: color .15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
 }
 
+.dropdown-item {
+  transition: color .15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+}
+
+.shop-now-button {
+  border: 1px solid var(--white);
+
+}
+
+.shop-now-button:hover,
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {
   color: var(--dark-font);
@@ -161,7 +207,6 @@ header,
 footer {
   background-color: var(--white);
   border-top: 1px solid var(--dark-font);
-  padding: 15px 0 0 0;
 }
 
 footer ul {
@@ -223,17 +268,22 @@ footer ul {
   
   @media (min-width: 992px) {
     .header-container {
-      padding-top: 300px;
+      padding-top: var(--large);
     }
     
     .form-control {
       width: 50%;
     }
+
+    .card-img-top {
+      height: 35vh;
+      object-fit: scale-down;
+    }
   }
   
   @media (max-width: 991px) {
     .header-container {
-      padding-top: 400px;
+      padding-top: var(--medium);
     }
 
 
@@ -245,7 +295,7 @@ footer ul {
 
   @media (max-width: 400px) {
     .header-container {
-      padding-top: 300px;
+      padding-top: var(--small);
     }
     
   }
