@@ -33,7 +33,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">{{product.name}}</h4>
                                 <p class="card-text">{{ product.summary }}</p>
-                                <p class="card-text">{{ product.platform }}</p>
+                                <p class="card-text">{{ product.manufacturer|title }} {{ product.platform }}</p>
                                 <p class="card-text">£{{ product.selling_price }}</p>
                                 {% if product.user_review %}
                                 <p class="card-text text-muted rating-star"><i class="fa-solid fa-star"></i> {{ product.user_review }}</p>
