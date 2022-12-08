@@ -1,7 +1,7 @@
 <form class="navbar-form d-none d-md-none d-lg-inline-flex align-self-center justify-content-end flex-grow-1">
-    <input type="text" class="form-control " placeholder="Search..." aria-label="Search">
+    <input type="text" class="form-control " placeholder="Search..." name="q">
   </form>
-  <ul class="nav fs-6 d-none d-md-none d-lg-inline-flex ms-auto flex-shrink-1">
+  <ul class="nav fs-6 d-none d-md-none d-lg-inline-flex ms-auto flex-shrink-1" method="GET" action="{% url 'products' %}">
     <li class="nav-item dropdown">
       <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <div class="text-center font-dark">
