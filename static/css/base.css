@@ -115,7 +115,7 @@ header,
 
 .allauth-form-inner-content input {
   border-color: #000;
-  border-radius: 5%;
+  border-radius: 5px;
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
@@ -126,7 +126,7 @@ header,
   color: #aab7c4;
 }
 
-.shop-now-button,
+.grey-button,
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
   /* btn */
@@ -141,7 +141,7 @@ header,
   user-select: none;
   background-color: var(--dark-font);
   border: 1px solid var(--dark-font);
-  border-radius: 5%;
+  border-radius: 5px;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
@@ -156,12 +156,13 @@ header,
   transition: color .15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
 }
 
-.shop-now-button {
+
+.grey-button {
   border: 1px solid var(--white);
 
 }
 
-.shop-now-button:hover,
+.grey-button:hover,
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {
   color: var(--dark-font);
@@ -173,20 +174,6 @@ header,
   list-style-type: none;
 }
 
-.btn-outline-grey {
-  background: var(--white);
-  color: var(--dark-font) !important; /* use important to override link colors for <a> elements */
-  border: 1px solid var(--dark-font);
-}
-
-.btn-outline-grey:hover,
-.btn-outline-grey:active,
-.btn-outline-grey:focus {
-  background: var(--dark-font);
-  color: #fff !important;
-  
-}
-
 .dropdown,
 .nav-item,
 .dropdown-item {
@@ -196,7 +183,6 @@ header,
 .nav-item:focus,
 .dropdown-item:focus,
 .dropdown-item:hover {
-  border-radius: 5%;
   background: var(--dark-font)!important;
   color: var(--white);
 }
