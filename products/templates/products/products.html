@@ -12,21 +12,37 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container-fluid">
-    <div class="row">
+<div class="container">
+    <div class="row mt-1 mb-5">
         <div class="col text-center mt-4">
             <h2 class="font-dark">All Products</h2>
-
             {% for platform in search_platform %}
-            <a href="{% url 'products' %}?platform={{ platform.platform }}" class="category-badge text-decoration-none">
-                <span class="p-2 badge badge-white text-black rounded-0 border border-dark">{{ platform.platform }}</span>
+            <a href="{% url 'products' %}?platform={{ platform.platform }}" class="grey-button btn btn-lg text-uppercase">
+                {{ platform.platform }}
             </a>
             {%endfor%}
 
-    </div></div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-12">
-            <div class="row mt-1 mb-5"></div>
+            <div class="row mt-1 mb-5 justify-content-end">
+                <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                    <div class="sort-select-wrapper">
+                        <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                            <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                            <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                            <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                            <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                        </select>
+                    </div> 
+                </div>
+            </div>
             <div class="row justify-content-center">
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 my-5">
@@ -50,27 +66,29 @@
                             <li class="list-group-item">
                                 <h5>{{ product.manufacturer|title }}</h5>
                             </li>
-                            <li class="list-group-item">Platform: {{ product.manufacturer|title }} {{ product.platform }}</li>
+                            <li class="list-group-item">Platform: {{ product.manufacturer|title }} {{ product.platform}}</li>
                             <li class="list-group-item">Released: {{ product.year_of_release }}</li>
                             {% if product.developer %}
-                                <li class="list-group-item">Developer: {{ product.developer }}</li>
+                            <li class="list-group-item">Developer: {{ product.developer }}</li>
                             {% else %}
-                                <li class="list-group-item">Developer: N/A</li>
+                            <li class="list-group-item">Developer: N/A</li>
                             {% endif%}
                             <li class="list-group-item">
-                                    <p>£{{ product.selling_price }}</p>
-                                    {% if product.user_review %}
-                                        <p class="card-text text-muted rating-star"><i class="fa-solid fa-star"></i> 
-                                            {{product.user_review }}</p>
-                                    {% else %}
-                                        <p class="card-text text-muted">No Ratings</p>
+                                <p>£{{ product.selling_price }}</p>
+                                {% if product.user_review %}
+                                <p class="card-text text-muted rating-star"><i class="fa-solid fa-star"></i>
+                                    {{product.user_review }}</p>
+                                {% else %}
+                                <p class="card-text text-muted">No Ratings</p>
                                 {% endif %}
                             </li>
                         </ul>
+                        {% if request.user.is_superuser %}
                         <div class="card-body">
                             <a href="#" class="card-link">Card link</a>
                             <a href="#" class="card-link">Another link</a>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:1 %}
