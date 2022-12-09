@@ -7,12 +7,13 @@ def all_products(request):
     '''
     A view for all products including searches
     '''
+  
     products = Product.objects.all()
-    manufacturers_list = Manufacturer.objects.distinct()
-    platform_list = Product.objects.distinct()
-
+    manufacturers_list = None
+    platform_list = None
     query = None
     manufacturers = None
+    platforms = None
     sort = None
     direction = None
 
@@ -34,53 +35,36 @@ def all_products(request):
         if 'platform' in request.GET:
             platforms = request.GET['platform'].split(',')
             products = products.filter(platform__in=platforms)
-            platforms = Product.objects.filter(platform__in=platforms)
 
         if 'manufacturer' in request.GET:
             manufacturers = request.GET['manufacturer'].split(',')
             products = products.filter(manufacturer__name__in=manufacturers)
             manufacturers = Manufacturer.objects.filter(name__in=manufacturers)
-            print(manufacturers)
+            platform_list = products.values('platform').distinct()
 
         if 'q' in request.GET:
-                query = request.GET['q']
-                if not query:
-                    message.error(request, "You didn't enter any search criteria!")
-                    return redirect(reverse('products'))
+            query = request.GET['q']
+            if not query:
+                message.error(request, "You didn't enter any search criteria!")
+                return redirect(reverse('products'))
 
-                queries = Q(name__icontains=query) | Q(
-                            summary__icontains=query)
-                products = products.filter(queries)
+            queries = Q(name__icontains=query) | Q(
+                        summary__icontains=query)
+            products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
 
 
     context = {
         'products': products,
-        'manufacturer_list': manufacturers_list,
-        'manufacturers': manufacturers,
-        'platform_list': platform_list,
+        'current_sorting':current_sorting,
+        'search_manufacturers': manufacturers,
+        'search_platform':platform_list,
+
     }
 
     return render(request, 'products/products.html', context)
 
-
-def unique_filters(request):
-    '''
-    A view for all products including searches
-    '''
-    products = Product.objects.all()
-    manufacturers_list = Manufacturer.objects.distinct()
-    platform_list = Product.objects.distinct()
-
-    context = {
-        'products': products,
-        'manufacturer_list': manufacturers_list,
-        'manufacturers': manufacturers,
-        'platform_list': platform_list,
-    }
-
-    return render(request, 'products/products.html', context)
 
 
 def product_detail(request, product_id):

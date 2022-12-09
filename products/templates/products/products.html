@@ -16,44 +16,54 @@
     <div class="row">
         <div class="col text-center mt-4">
             <h2 class="font-dark">All Products</h2>
-        </div>
-    </div>
+
+            {% for platform in search_platform %}
+            <a href="{% url 'products' %}?platform={{ platform.platform }}" class="category-badge text-decoration-none">
+                <span class="p-2 badge badge-white text-black rounded-0 border border-dark">{{ platform.platform }}</span>
+            </a>
+            {%endfor%}
+
+    </div></div>
     <div class="row">
-        <div class="col-10 offset-1">
+        <div class="col-12">
             <div class="row mt-1 mb-5"></div>
-            <div class="row ">
+            <div class="row justify-content-center">
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 my-5">
                     <div class="card h-100 border-0 ">
                         <div class="col">
-                        {% if product.image %}
-                        <a href="{% url 'product_detail' product.id %}">
-                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name}}">
-                        </a>
-                        {% else %}
-                        <a href="{% url 'product_detail' product.id %}">
-                        <img src="{{ MEDIA_URL }}no_cover_image.jpg" class="card-img-top" alt="{{ product.name}}">
-                        </a>
-                        {% endif %}
-                    </div>
+                            {% if product.image %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name}}">
+                            </a>
+                            {% else %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img src="{{ MEDIA_URL }}no_cover_image.jpg" class="card-img-top"
+                                    alt="{{ product.name}}">
+                            </a>
+                            {% endif %}
+                        </div>
                         <div class="card-body flex-1">
                             <h4 class="card-title">{{product}}</h4>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><h5>{{ product.manufacturer|title }}</h5></li>
+                            <li class="list-group-item">
+                                <h5>{{ product.manufacturer|title }}</h5>
+                            </li>
                             <li class="list-group-item">Platform: {{ product.manufacturer|title }} {{ product.platform }}</li>
                             <li class="list-group-item">Released: {{ product.year_of_release }}</li>
                             {% if product.developer %}
-                            <li class="list-group-item">Developer: {{ product.developer }}</li>
+                                <li class="list-group-item">Developer: {{ product.developer }}</li>
                             {% else %}
-                            <li class="list-group-item">Developer: N/A</li>
+                                <li class="list-group-item">Developer: N/A</li>
                             {% endif%}
                             <li class="list-group-item">
-                                <p>£{{ product.selling_price }}</p>
-                                {% if product.user_review %}
-                                    <p class="card-text text-muted rating-star"><i class="fa-solid fa-star"></i> {{ product.user_review }}</p>
-                                {% else %}
-                                    <p class="card-text text-muted">No Ratings</p>
+                                    <p>£{{ product.selling_price }}</p>
+                                    {% if product.user_review %}
+                                        <p class="card-text text-muted rating-star"><i class="fa-solid fa-star"></i> 
+                                            {{product.user_review }}</p>
+                                    {% else %}
+                                        <p class="card-text text-muted">No Ratings</p>
                                 {% endif %}
                             </li>
                         </ul>
@@ -67,25 +77,25 @@
                 <div class="col-12 d-sm-none mb-5">
                     <hr>
                 </div>
-            {% endif %}
+                {% endif %}
 
-            {% if forloop.counter|divisibleby:2 %}
+                {% if forloop.counter|divisibleby:2 %}
                 <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
                     <hr>
                 </div>
-            {% endif %}
+                {% endif %}
 
-            {% if forloop.counter|divisibleby:3 %}
+                {% if forloop.counter|divisibleby:3 %}
                 <div class="col-12 d-none d-lg-block d-xl-none mb-5">
                     <hr>
                 </div>
-            {% endif %}
+                {% endif %}
 
-            {% if forloop.counter|divisibleby:4 %}
+                {% if forloop.counter|divisibleby:4 %}
                 <div class="col-12 d-none d-xl-block mb-5">
                     <hr>
                 </div>
-            {% endif %}
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
