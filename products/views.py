@@ -20,7 +20,6 @@ def all_products(request):
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
-            sorting_key = sortkey
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -54,7 +53,7 @@ def all_products(request):
         'search_term': query,
         'current_sorting':current_sorting,
         'search_manufacturers': manufacturers,
-        'search_platform':platform_list,
+        'search_platform': platform_list,
 
     }
 
