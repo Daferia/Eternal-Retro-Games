@@ -37,12 +37,7 @@
                     {% endifchanged %}
                 {%endfor%}
             {%endif%}
-            
-            
-            
-            
-            
-            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-12">
@@ -66,7 +61,9 @@
                 </div>
                 <div class="col-12 col-md-6 order-md-first">
                     <p class="text-muted mt-3 text-center text-md-start">
-                        {% if search_term or search_manufacturers or current_sorting or search_platform != 'None_None' %}
+                        {% if current_sorting != 'None_None' or 'platform' in request.GET %}
+                            <span class="small"><a href="{% url 'products' %}" class="font-dark">Products Home</a> | </span>
+                        {% elif search_term or search_platform != None %}
                             <span class="small"><a href="{% url 'products' %}" class="font-dark">Products Home</a> | </span>
                         {% endif %}
                         {{ products|length }} Products{% if search_term %} found for <strong>{{ search_term }}</strong>{% endif %}
