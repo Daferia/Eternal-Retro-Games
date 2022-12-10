@@ -9,10 +9,9 @@ def all_products(request):
     '''
   
     products = Product.objects.all()
-    manufacturers_list = None
     platform_list = None
     query = None
-    manufacturers = None
+    manufacturers = products.values('manufacturer__name').distinct()
     platforms = None
     sort = None
     direction = None
@@ -21,11 +20,7 @@ def all_products(request):
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
-            if sortkey == 'platform':
-                sortkey = 'platform'
-            if sortkey == 'manufacturer':
-                sortkey = 'manufacturer_id'
-                print(sortkey)
+            sorting_key = sortkey
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -54,9 +49,9 @@ def all_products(request):
 
     current_sorting = f'{sort}_{direction}'
 
-
     context = {
         'products': products,
+        'search_term': query,
         'current_sorting':current_sorting,
         'search_manufacturers': manufacturers,
         'search_platform':platform_list,
