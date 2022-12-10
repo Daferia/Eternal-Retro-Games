@@ -16,13 +16,33 @@
     <div class="row mt-1 mb-5">
         <div class="col text-center mt-4">
             <h2 class="font-dark">All Products</h2>
-            {% for platform in search_platform %}
-            <a href="{% url 'products' %}?platform={{ platform.platform }}" class="grey-button btn btn-lg text-uppercase">
-                {{ platform.platform }}
-            </a>
-            {%endfor%}
-
-        </div>
+            
+            {% if 'manufacturer' in request.GET %}
+                {% for platform in search_platform|dictsort:'platform' %}
+                    {% ifchanged %}
+                        <a href="{% url 'products' %}?platform={{ platform.platform }}"
+                        class="grey-button btn btn-lg text-uppercase">
+                        {{ platform.platform }}
+                        </a>
+                    {% endifchanged %}
+                {%endfor%}
+            {% elif 'platform' in request.GET%}
+            {% else %}
+                {% for manufacturer in search_manufacturers %}
+                    {% ifchanged %}
+                        <a href="{% url 'products' %}?manufacturer={{ manufacturer.manufacturer__name }}"
+                        class="grey-button btn btn-lg text-uppercase">
+                        {{ manufacturer.manufacturer__name }}
+                        </a>             
+                    {% endifchanged %}
+                {%endfor%}
+            {%endif%}
+            
+            
+            
+            
+            
+            </div>
     </div>
     <div class="row">
         <div class="col-12">
@@ -31,16 +51,26 @@
                     <div class="sort-select-wrapper">
                         <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                            <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
-                            <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
-                            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                            <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
-                            <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                            <option value="developer_asc" {% if current_sorting == 'developer_asc' %}selected{% endif %}>Developer (low to high)</option>
+                            <option value="developer_desc" {% if current_sorting == 'developer_desc' %}selected{% endif %}>Developer (high to low)</option>
+                            <option value="user_review_asc" {% if current_sorting == 'user_review_asc' %}selected{% endif %}>Rating (low to high)</option>
+                            <option value="user_review_desc" {% if current_sorting == 'user_review_desc' %}selected{% endif %}>Rating (high to low)</option>
+                            <option value="year_of_release_asc" {% if current_sorting == 'year_of_release_asc' %}selected{% endif %}>Year of Release (Older-Recent)</option>
+                            <option value="year_of_release_desc" {% if current_sorting == 'year_of_release_desc' %}selected{% endif %}>Year of Release (Recent-Older)</option>
+                            <option value="manufacturer_asc" {% if current_sorting == 'manufacturer_asc' %}selected{% endif %}>Manufacturer (A-Z)</option>
+                            <option value="manufacturer_desc" {% if current_sorting == 'manufacturer_desc' %}selected{% endif %}>Manufacturer (Z-A)</option>
+                            <option value="manufacturer_desc" {% if current_sorting == 'platform_asc' %}selected{% endif %}>Platform (A-Z)</option>
+                            <option value="manufacturer_desc" {% if current_sorting == 'platform_desc' %}selected{% endif %}>Platform (Z-A)</option>
                         </select>
                     </div> 
+                </div>
+                <div class="col-12 col-md-6 order-md-first">
+                    <p class="text-muted mt-3 text-center text-md-start">
+                        {% if search_term or search_manufacturers or current_sorting or search_platform != 'None_None' %}
+                            <span class="small"><a href="{% url 'products' %}" class="font-dark">Products Home</a> | </span>
+                        {% endif %}
+                        {{ products|length }} Products{% if search_term %} found for <strong>{{ search_term }}</strong>{% endif %}
+                    </p>
                 </div>
             </div>
             <div class="row justify-content-center">
