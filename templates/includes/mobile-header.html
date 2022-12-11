@@ -43,7 +43,7 @@ class="nav col-sm-6 fs-6 .d-none d-sm-inline-flex d-md-inline-flex d-lg-none jus
     <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
     {% endif %}
 </li>
-<li class="nav-item"><a href=""
+<li class="nav-item"><a href="{% url 'view_cart' %}"
     class="{% if grand_total %}text-success font-weight-bold{% else %}text-black{% endif %} nav-link">
     <div class="text-center font-dark">
       <div><i class="fas fa-shopping-bag fa-lg"></i></div>
