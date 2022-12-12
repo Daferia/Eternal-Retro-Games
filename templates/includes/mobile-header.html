@@ -44,9 +44,9 @@ class="nav col-sm-6 fs-6 .d-none d-sm-inline-flex d-md-inline-flex d-lg-none jus
     {% endif %}
 </li>
 <li class="nav-item"><a href="{% url 'view_cart' %}"
-    class="{% if grand_total %}text-success font-weight-bold{% else %}text-black{% endif %} nav-link">
-    <div class="text-center font-dark">
-      <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+    class="{% if grand_total %}text-danger font-weight-bold{% else %} font-dark{% endif %} nav-link">
+    <div class="text-center">
+      <div><i class="fa-solid fa-cart-shopping fa-lg"></i></div>
       <p class="my-0">
         {% if grand_total %}
         £{{ grand_total|floatformat:2 }}
