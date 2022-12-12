@@ -15,17 +15,13 @@
 <div class="container my-3">
     <div class="row">
         <hr>
-        <h2>Your Cart</h2>
+        <h2><i class="fa-solid fa-cart-shopping fa-lg"></i> Your Cart</h2>
         <hr>
     </div>
     <div class="row">
         <div class="col">
             {% if cart_items %}
-            <table class="table table-borderless">
-                <thead>
-                    total summary
-                  </thead>
-                  <tbody>
+            <table class="table">  
                     <thead class="table-active">
                         <tr>
                             <th scope="col">Product Info</th>
@@ -34,6 +30,37 @@
                             <th scope="col">Qty</th>
                             <th scope="col">Subtotal</th>
                         </tr>
+                    </thead>
+                   <tbody>
+                    {% for item in cart_items %}
+                    <tr>
+                        <td class="p-3 w-25">
+                            {% include 'cart/product-image.html' %}
+                        </td>
+                        <td class="py-3 align-middle">
+                            {% include 'cart/product-info.html' %}
+                        </td>
+                        <td class="py-3 align-middle">
+                            <p class="my-0">{{ item.product.selling_price }}</p>
+                        </td>
+                        <td class="py-3 align-middle">
+                            {% include 'cart/quantity-form.html' %}
+                        </td>
+                        <td class="py-3 align-middle">
+                            <p class="my-0">{{ item.product.selling_price  }}</p>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td class="pt-5 text-right" colspan="5">
+                            {% include 'cart/cart-total.html' %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right" colspan="5">
+                            {% include 'cart/checkout-buttons.html' %}
+                        </td>
+                    </tr>
                   </tbody>
               </table>
               {% else %}
