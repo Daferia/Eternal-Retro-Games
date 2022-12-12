@@ -126,6 +126,13 @@ header,
   color: #aab7c4;
 }
 
+.table-active {
+  color: #fff;
+  background-color: var(--dark-font);
+  border: 1px solid var(--dark-font);
+  border-radius: 5px !important;
+}
+
 .scroll-to-top,
 .grey-button,
 .allauth-form-inner-content button,
@@ -157,6 +164,9 @@ header,
   transition: color .15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
 }
 
+.added-items{
+  color: greenyellow;
+}
 
 .grey-button {
   border: 1px solid var(--white);
