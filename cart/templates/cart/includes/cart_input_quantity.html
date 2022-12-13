@@ -1,0 +1,20 @@
+<script type="text/javascript">
+    // update quantity on click
+    $('.update-link').click(function(e) {
+        let form = $(this).prev('.update-form');
+        form.submit();
+    }) 
+    
+    // Remove item on click
+    $('.remove-item').click(function(e) {
+        let csrfToken = "{{ csrf_token }}"; // <- note the {{ csrf_token }} used istead of {% csrf_token %}
+        let itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/cart/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+        .done(function(){
+            location.reload();
+        });
+    });
+</script>
