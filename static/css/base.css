@@ -133,6 +133,30 @@ header,
   border-radius: 5px !important;
 }
 
+.grey-button {
+  border: 1px solid var(--white);
+  
+}
+
+.scroll-to-top-button {
+  height: 42px;
+  width: 42px;
+  position: fixed;
+  bottom: 5rem;
+  right: 2rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.scroll-to-top:hover,
+.grey-button:hover,
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content input[type='submit']:hover {
+  color: var(--dark-font);
+  background-color: var(--white);
+  border-color: #222;
+}
+
 .scroll-to-top,
 .grey-button,
 .allauth-form-inner-content button,
@@ -154,10 +178,14 @@ header,
   font-size: 1rem;
   line-height: 1.5;
 
-  
+
 
   /* Standard bootsrap btn transitions */
   transition: color .15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+}
+
+.allauth-form-inner-content ul {
+  list-style-type: none;
 }
 
 .dropdown-item {
@@ -166,24 +194,6 @@ header,
 
 .added-items{
   color: greenyellow;
-}
-
-.grey-button {
-  border: 1px solid var(--white);
-
-}
-
-.scroll-to-top:hover,
-.grey-button:hover,
-.allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {
-  color: var(--dark-font);
-  background-color: var(--white);
-  border-color: #222;
-}
-
-.allauth-form-inner-content ul {
-  list-style-type: none;
 }
 
 .dropdown,
@@ -199,15 +209,11 @@ header,
   color: var(--white);
 }
 
-.scroll-to-top-button {
-  height: 42px;
-  width: 42px;
-  position: fixed;
-  bottom: 8rem;
-  right: 2rem;
-  background-color: #fff;
-  cursor: pointer;
+.update-link,
+.remove-item  {
+    cursor: pointer;
 }
+
 
 
 /* Footer Styling */
@@ -220,11 +226,12 @@ footer {
 footer ul {
   list-style: none;
 }
+
+/* Social media styling */
+
 .social-links {
   font-size: 1.5rem;
 }
-
-/* Social media styling */
 
 .facebook-link:hover,
 .facebook-link:active,
