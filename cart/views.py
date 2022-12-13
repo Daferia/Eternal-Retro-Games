@@ -56,6 +56,7 @@ def remove_from_cart(request, item_id):
 
     try:
         product = get_object_or_404(Product, pk=item_id)
+        cart = request.session.get('cart', {})
 
         cart.pop(item_id)
         messages.success(request, f'Removed {product.name} to your bag')
