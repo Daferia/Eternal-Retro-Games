@@ -38,13 +38,20 @@ def all_products(request):
 
         if 'q' in request.GET:
             query = request.GET['q']
+
+            # if not data is enter into searchbar
             if not query:
-                message.error(request, "You didn't enter any search criteria!")
+                messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(
-                        summary__icontains=query)
+                        developer__icontains=query)
             products = products.filter(queries)
+
+            # if value is not found display this message
+            if not products:
+                messages.info(request, f'We found zero products called {query}')
+                return redirect(reverse('products'))
 
     current_sorting = f'{sort}_{direction}'
 
