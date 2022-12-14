@@ -1,11 +1,13 @@
-<form class="navbar-form d-none d-md-none d-lg-inline-flex align-self-center justify-content-end flex-grow-1">
-    <input type="text" class="form-control " placeholder="Search..." name="q">
+<form class="navbar-form d-none d-md-none d-lg-inline-flex align-self-center justify-content-end flex-grow-1" method="GET" action="{% url 'products' %}">
+    <input type="text" class="form-control" placeholder="Search..." name="q">
   </form>
-  <ul class="nav fs-6 d-none d-md-none d-lg-inline-flex ms-auto flex-shrink-1" method="GET" action="{% url 'products' %}">
+  <ul class="nav fs-6 d-none d-md-none d-lg-inline-flex ms-auto flex-shrink-1" >
     <li class="nav-item dropdown">
-      <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <div class="text-center font-dark">
-          <div><i class="fas fa-user fa-lg"></i></div>
+          <div>
+            <i class="fas fa-user fa-lg"></i>
+          </div>
           <p class="my-0 ">My Account</p>
         </div>
       </a>
