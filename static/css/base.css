@@ -133,6 +133,23 @@ header,
   border-radius: 5px !important;
 }
 
+/* Bootstrap Toasts */
+
+.message-container {
+  position: fixed;
+  top: 72px;
+  right: 15px;
+  z-index: 999999;
+}
+
+.custom-toast {
+  overflow: visible;
+}
+
+.toast-capper {
+  height: 5px;
+}
+
 .grey-button {
   border: 1px solid var(--white);
   
@@ -278,7 +295,49 @@ footer ul {
   color: #dd4b39 !important;
 }
 
+
+/* Convenience classes - colors copied from Bootstrap */
+.arrow-primary {
+  border-bottom-color: #007bff !important;
+}
+
+.arrow-secondary {
+  border-bottom-color: #6c757d !important;
+}
+
+.arrow-success {
+  border-bottom-color: #28a745 !important;
+}
+
+.arrow-danger {
+  border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+  border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+  border-bottom-color: #17a2b8 !important;
+}
+
+.arrow-light {
+  border-bottom-color: #f8f9fa !important;
+}
+
+.arrow-dark {
+  border-bottom-color: #343a40 !important;
+}
+
+.bag-notification-wrapper {
+  height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
  
+/*  Media Queries */
+
   /* fixed top navbar only on medium and up */
   
   @media (min-width: 992px) {
@@ -301,7 +360,6 @@ footer ul {
       padding-top: var(--medium);
     }
 
-
     .navbar-nav,
     .dropdown-menu {
       margin-top: 2%;
@@ -311,7 +369,6 @@ footer ul {
   @media (max-width: 400px) {
     .header-container {
       padding-top: var(--small);
-    }
-    
+    }   
   }
 
