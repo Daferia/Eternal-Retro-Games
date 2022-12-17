@@ -6,7 +6,7 @@
 
 {% block inner_content %}
 <div class="card col-8">
-  <div class="card-header font-dark fs-3">{% trans "E-mail Addresses" %}</div>
+  <h2 class="card-header font-dark">{% trans "E-mail Addresses" %}</h2>
 {% if user.emailaddress_set.all %}
 <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
 
@@ -50,7 +50,7 @@
 
     <form method="post" action="{% url 'account_email' %}" class="add_email">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crsipy }}
         <button name="action_add" type="submit">{% trans "Add E-mail" %}</button>
     </form>
   {% endif %}
