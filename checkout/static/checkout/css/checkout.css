@@ -3,7 +3,7 @@
   box-sizing: border-box;
   height: 40px;
   padding: 10px 12px;
-  border: 1px solid transparent;
+  border: 1px solid var(--dark-font);
   border-radius: 5px;
   background-color: white;
   box-shadow: 0 1px 3px 0 #e6ebf1;
@@ -44,6 +44,16 @@ select option {
 select:invalid,
 select option[value=""]{
   color: #aab7c4 !important;
+}
+
+.form-check-input:checked{
+  background-color: var(--dark-font);
+  border-color: var(--dark-font);
+}
+
+.form-check-input:focus{
+  border-color: var(--dark-font);
+  box-shadow: 0 0 0 0.25rem rgb(66 66 66 / 25%);
 }
 
 #loading-overlay {
