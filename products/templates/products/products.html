@@ -112,9 +112,10 @@
                         </ul>
                         {% if request.user.is_superuser %}
                             <div class="card-body">
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
+                                <a href="{% url 'edit_product' product.id %}" class="btn btn btn-outline-success btn-sm card-link">Edit</a>
+                                <button class="btn btn-outline-danger btn-sm card-link" data-bs-toggle="modal" data-bs-target="#defensive_delete-{{product.id}}">Delete</button>
                             </div>
+                            {% include 'products/includes/delete_modal.html' %}
                         {% endif %}
                     </div>
                 </div>

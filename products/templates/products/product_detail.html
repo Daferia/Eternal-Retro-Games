@@ -40,6 +40,15 @@
                                 {% else %}
                                     <p class="card-text text-muted">No Ratings</p>
                                 {% endif %}
+                                {% if request.user.is_superuser %}
+                                <div class="card-body">
+                                    <a href="{% url 'edit_product' product.id %}" class="btn btn btn-outline-success btn-sm card-link">Edit</a>
+                                    <button class="btn btn-outline-danger btn-sm card-link" data-bs-toggle="modal" data-bs-target="#defensive_delete-{{product.id}}">Delete</button>
+
+                                      {% include 'products/includes/delete_modal.html' %}
+
+                                </div>
+                            {% endif %}
 
                                 <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                                     {% csrf_token %}
