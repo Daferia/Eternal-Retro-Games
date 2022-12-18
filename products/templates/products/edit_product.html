@@ -35,7 +35,7 @@
                     {% endif %}
                 {% endfor %}
                 <div class="text-end">
-                    <a href="{% url 'products' %}" class="grey-button">Cancel</a>
+                    <a href="{% url 'products' %}" class="btn grey-button">Cancel</a>
                     <button class="grey-button" type="submit">Update Product</button>
                 </div>
             </form>
@@ -49,8 +49,13 @@
     <script type="text/javascript">
         $('#new-image').change(function() {
             let file = $('#new-image')[0].file[0];
-            $('#filename').text(`Image will beset to ${file.name}`)
+            $('#filename').text(`Image will be set to ${file.name}`)
         })
     </script>
+      <script>
+        $(document).ready(function(){
+            $(".toast").toast('show'); 
+        });
+        </script>
 {% endblock%}
 
