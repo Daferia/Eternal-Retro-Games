@@ -19,7 +19,6 @@
 .card-body,
 .list-group-item {
   color: var(--dark-font);
-  /* color: red; */
 }
 
 html {
@@ -194,6 +193,7 @@ header,
 .grey-button,
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
+  
   /* btn */
   display: inline-block;
   font-weight: 400;
@@ -360,6 +360,36 @@ footer ul {
   overflow-y: auto;
 }
 
+/* Product Form */
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-control {
+    color: #dc3545;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-color: #dc3545;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #dc3545;
+    border-color: #dc3545;
+
+}
  
 /*  Media Queries */
 
