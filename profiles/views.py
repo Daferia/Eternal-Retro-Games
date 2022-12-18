@@ -4,15 +4,18 @@ from django.contrib.auth.decorators import login_required
 
 
 from .models import UserProfile
-# from .forms import UserProfileForm
+from .forms import UserProfileForm
 
 from checkout.models import Order
 
 
 @login_required
 def profile(request):
+
     """ Dsiplay the user's profile """
+
     profile = get_object_or_404(UserProfile, user=request.user)
+    full_name = profile.default_full_name
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
@@ -27,6 +30,8 @@ def profile(request):
 
     template = 'profiles/profile.html'
     context = {
+        'profile':profile,
+        'full_name': full_name,
         'form': form,
         'orders': orders,
         'on_profile_page': True
