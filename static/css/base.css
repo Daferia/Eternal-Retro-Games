@@ -122,7 +122,8 @@ header,
   display: none;
 }
 
-.allauth-form-inner-content input::placeholder {
+.allauth-form-inner-content input::placeholder,
+#product-form-input input::placeholder {
   color: #aab7c4;
 }
 
@@ -145,6 +146,14 @@ header,
   box-shadow: 0 0 0 0.25rem rgb(66 66 66 / 25%);
 }
 
+/* Product admin Styling */
+
+#product-form-input .form-control{
+    color: var(--dark-font);
+    border: 1px solid var(--dark-font);
+}
+
+
 /* Bootstrap Toasts */
 
 .message-container {
@@ -160,11 +169,6 @@ header,
 
 .toast-capper {
   height: 5px;
-}
-
-.grey-button {
-  border: 1px solid var(--white);
-  
 }
 
 .scroll-to-top-button {
@@ -207,10 +211,19 @@ header,
   font-size: 1rem;
   line-height: 1.5;
 
+  
 
 
   /* Standard bootsrap btn transitions */
   transition: color .15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+}
+
+.grey-button-home {
+  border: 1px solid var(--white);
+}
+
+.grey-button-home:hover {
+  border-color: var(--dark-font) !important;
 }
 
 .allauth-form-inner-content ul {
