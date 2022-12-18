@@ -15,8 +15,9 @@ class ProductForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         manufacturers = Manufacturer.objects.all()
-        firendly_names = [(c.id, c.get_friendly_name()) for c in manufacturers]
+        friendly_names = [(c.id, c.get_friendly_name()) for c in manufacturers]
 
-        self.fields['manufacturer'].choices = firendly_names
+
+        self.fields['manufacturer'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'grey-font product-form-input'
