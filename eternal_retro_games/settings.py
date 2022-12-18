@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import os
+import dj_database_url
 from pathlib import Path
 
 import environ
@@ -32,7 +33,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['eternal-retro-games.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -128,6 +129,7 @@ WSGI_APPLICATION = 'eternal_retro_games.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
