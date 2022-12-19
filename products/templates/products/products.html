@@ -14,10 +14,13 @@
 <div class="overlay"></div>
 <div class="container">
     <div class="row mt-1 mb-5">
-        <div class="col text-center mt-4">
-            <h2 class="font-dark">All Products</h2>
-            
+        <div class="col text-center mt-4">            
             {% if 'manufacturer' in request.GET %}
+                {% for brand in products|dictsort:'platform'  %}
+                {% ifchanged %}
+                        <h2 class="font-dark">{{brand.manufacturer|title}} Games</h2>
+                        {% endifchanged %}
+                {% endfor %}
                 {% for platform in search_platform|dictsort:'platform' %}
                     {% ifchanged %}
                         <a href="{% url 'products' %}?platform={{ platform.platform }}"
@@ -27,7 +30,13 @@
                     {% endifchanged %}
                 {%endfor%}
             {% elif 'platform' in request.GET%}
+                {% for a in products|dictsort:'platform'  %}
+                    {% ifchanged %}
+                        <h2 class="font-dark">{{a.platform}} Games</h2>
+                    {% endifchanged %}
+                {% endfor %}
             {% else %}
+            <h2 class="font-dark">All Products</h2>
                 {% for manufacturer in search_manufacturers %}
                     {% ifchanged %}
                         <a href="{% url 'products' %}?manufacturer={{ manufacturer.manufacturer__name }}"
@@ -36,7 +45,7 @@
                         </a>             
                     {% endifchanged %}
                 {%endfor%}
-            {%endif%}
+                {%endif%}
         </div>
     </div>
     <div class="row">
@@ -72,8 +81,8 @@
             </div>
             <div class="row justify-content-center">
                 {% for product in products %}
-                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 my-5">
-                    <div class="card h-100 border-0 ">
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xxl-3 my-5">
+                    <div class="card h-100 border-0">
                         <div class="col">
                             {% if product.image %}
                             <a href="{% url 'product_detail' product.id %}">
@@ -87,18 +96,18 @@
                             {% endif %}
                         </div>
                         <div class="card-body flex-1">
-                            <h4 class="card-title">{{product|title}}</h4>
+                            <p class="card-title fs-5 text-capitalize">{{product}}</p>
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <h5>{{ product.manufacturer|title }}</h5>
+                                <p>{{ product.manufacturer|title }}</p>
                             </li>
-                            <li class="list-group-item">Platform: {{ product.manufacturer|title }} {{ product.platform}}</li>
-                            <li class="list-group-item">Released: {{ product.year_of_release }}</li>
+                            <li class="list-group-item"><strong>Platform:</strong> {{ product.manufacturer|title }} {{ product.platform}}</li>
+                            <li class="list-group-item"><strong>Released:</strong> {{ product.year_of_release }}</li>
                             {% if product.developer %}
-                                <li class="list-group-item">Developer: {{ product.developer }}</li>
+                                <li class="list-group-item"><strong>Developer:</strong> {{ product.developer }}</li>
                             {% else %}
-                                <li class="list-group-item">Developer: N/A</li>
+                                <li class="list-group-item"><strong>Developer:</strong> N/A</li>
                             {% endif%}
                             <li class="list-group-item">
                                 <p>£{{ product.selling_price }}</p>
@@ -111,9 +120,9 @@
                             </li>
                         </ul>
                         {% if request.user.is_superuser %}
-                            <div class="card-body">
-                                <a href="{% url 'edit_product' product.id %}" class="btn btn btn-outline-success btn-sm card-link">Edit</a>
-                                <button class="btn btn-outline-danger btn-sm card-link" data-bs-toggle="modal" data-bs-target="#defensive_delete-{{product.id}}">Delete</button>
+                            <div class="card-body align-self-center">
+                                <a href="{% url 'edit_product' product.id %}" class="btn btn-outline-success btn-sm card-link"><i class="fa-solid fa-pen"></i> Edit</a>
+                                <button class="btn btn-outline-danger btn-sm card-link" data-bs-toggle="modal" data-bs-target="#defensive_delete-{{product.id}}"><i class="fa-solid fa-trash"></i> Delete</button>
                             </div>
                             {% include 'products/includes/delete_modal.html' %}
                         {% endif %}
