@@ -111,10 +111,8 @@ def checkout(request):
                 })
             except UserProfile.DoesNotExist:
                 order_form = OrderForm()
-                print("failed")
         else:
             order_form = OrderForm()
-            print('skipped')
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
@@ -139,7 +137,9 @@ def checkout_success(request, order_number):
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
+
         # Attach the user's profile to the order
+        
         order.user_profile = profile
         order.save()
 
