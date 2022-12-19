@@ -1,1 +1,1 @@
-web:gunicorn eternal_retro_games.wsgi:application
+web: gunicorn eternal_retro_games.wsgi:application
