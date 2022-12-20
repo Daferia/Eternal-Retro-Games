@@ -3,7 +3,7 @@
   box-sizing: border-box;
   height: 40px;
   padding: 10px 12px;
-  border: 1px solid var(--dark-font);
+  border: 1px solid var(--dark);
   border-radius: 5px;
   background-color: white;
   box-shadow: 0 1px 3px 0 #e6ebf1;
@@ -32,13 +32,13 @@
 
 #payment-form .form-control,
 #card-element {
-    color: var(--dark-font);
-    border: 1px solid var(--dark-font);
+    color: var(--dark);
+    border: 1px solid var(--dark);
 }
 
 select,
 select option {
-  color: var(--dark-font);
+  color: var(--dark);
 }
 
 select:invalid,

@@ -6,8 +6,8 @@
 #profile-update-form .form-control,
 #id_default_country,
 #id_default_country option:not(:first-child){
-    color: var(--dark-font);
-    border: 1px solid var(--dark-font);
+    color: var(--dark);
+    border: 1px solid var(--dark);
 }
 
 #profile-update-form input::placeholder {
