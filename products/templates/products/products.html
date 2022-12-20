@@ -18,7 +18,7 @@
             {% if 'manufacturer' in request.GET %}
                 {% for brand in products|dictsort:'platform'  %}
                 {% ifchanged %}
-                        <h2 class="font-dark">{{brand.manufacturer|title}} Games</h2>
+                        <h2 class="font-dark">{{brand.manufacturer|title}} Consoles</h2>
                         {% endifchanged %}
                 {% endfor %}
                 {% for platform in search_platform|dictsort:'platform' %}
