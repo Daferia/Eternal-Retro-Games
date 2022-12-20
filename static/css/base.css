@@ -158,7 +158,7 @@ header,
 
 .message-container {
   position: fixed;
-  top: 136px;
+  top: 124px;
   right: 15px;
   z-index: 999999;
 }
@@ -408,7 +408,7 @@ footer ul {
   /* fixed top navbar only on medium and up */
   @media (min-width: 576px) {
     .message-container {
-      top: 146px;
+      top: 134px;
     }
     
     .toast {
@@ -422,7 +422,7 @@ footer ul {
       object-fit: scale-down;
     }
     .message-container {
-      top: 156px;
+      top: 126px;
     }
   }
   
