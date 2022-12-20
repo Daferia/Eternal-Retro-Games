@@ -6,9 +6,9 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block inner_content %}
-<div class="card col-12 col-md-6 mt-5">
+<div class="card col-12 col-md-6 mt-5 border border-light">
 
-<h2 class="card-header font-dark">{% trans "Sign In" %}</h2>
+<h2 class="card-header font-white">{% trans "Sign In" %}</h2>
 
 {% get_providers as socialaccount_providers %}
 
@@ -23,7 +23,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
     {% include "socialaccount/snippets/provider_list.html" with process="login" %}
   </ul>
 
-  <div class="login-or dark-font">or</div>
+  <div class="login-or font-white">or</div>
 
 </div>
 
@@ -31,7 +31,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
 {% else %}
 <p>{% blocktrans %}If you have not created an account yet, then please
-<a class="font-dark alluth-links" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+<a class="font-dark fw-semibold alluth-links" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
 <form class="login" method="POST" action="{% url 'account_login' %}">
@@ -40,9 +40,9 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <a href="{% url 'home' %}" class="btn grey-button">Home</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-  <a class="button secondaryAction font-dark" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+  <a href="{% url 'home' %}" class="btn grey-button border border-light">Home</a>
+  <button class="primaryAction border border-light" type="submit">{% trans "Sign In" %}</button>
+  <a class="button secondaryAction fw-semibold font-dark" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
 </form>
 
 </div>

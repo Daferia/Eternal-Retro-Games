@@ -110,7 +110,7 @@ header,
 
 .allauth-form-inner-content p {
   margin-top: 1.5rem; /* mt-4 */
-  color: var(--dark); /* text-secondary */
+  color: var(--white); /* text-secondary */
 }
 
 .allauth-form-inner-content input {
@@ -161,9 +161,6 @@ header,
   top: 124px;
   right: 15px;
   z-index: 999999;
-}
-
-.toast {
   width: 80%;
 }
 
@@ -244,13 +241,16 @@ header,
 .nav-link:hover,
 .nav-link:focus,
 .secondaryAction:hover,
-.alluth-links:hover  {
+.alluth-links:hover,
+.footer-link:hover,
+.footer-link:focus  {
   color: var(--white);
 }
 
 .dropdown,
 .nav-item,
-.dropdown-item {
+.dropdown-item,
+.footer-link {
   font-weight: 700;
 }
 
@@ -409,9 +409,6 @@ footer ul {
   @media (min-width: 576px) {
     .message-container {
       top: 134px;
-    }
-    
-    .toast {
       width: 50%;
     }
   }
