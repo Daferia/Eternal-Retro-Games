@@ -158,13 +158,13 @@ header,
 
 .message-container {
   position: fixed;
-  top: 72px;
+  top: 136px;
   right: 15px;
   z-index: 999999;
 }
 
 .toast {
-  width: auto;
+  width: 80%;
 }
 
 .custom-toast {
@@ -406,11 +406,23 @@ footer ul {
 /*  Media Queries */
 
   /* fixed top navbar only on medium and up */
+  @media (min-width: 576px) {
+    .message-container {
+      top: 146px;
+    }
+    
+    .toast {
+      width: 50%;
+    }
+  }
   
   @media (min-width: 992px) {
     .card-img-top {
       height: 30vh;
       object-fit: scale-down;
+    }
+    .message-container {
+      top: 156px;
     }
   }
   
@@ -420,4 +432,5 @@ footer ul {
       margin-top: 2%;
     }
   }
+
 
