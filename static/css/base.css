@@ -163,6 +163,10 @@ header,
   z-index: 999999;
 }
 
+.toast {
+  width: auto;
+}
+
 .custom-toast {
   overflow: visible;
 }
