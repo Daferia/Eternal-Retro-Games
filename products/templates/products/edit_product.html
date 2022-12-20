@@ -35,7 +35,7 @@
                     {% endif %}
                 {% endfor %}
                 <div class="text-end">
-                    <a href="{% url 'products' %}" class="btn grey-button">Cancel</a>
+                    <a href="{% url 'product_detail' product.id %}" class="btn grey-button">Cancel</a>
                     <button class="grey-button" type="submit">Update Product</button>
                 </div>
             </form>
