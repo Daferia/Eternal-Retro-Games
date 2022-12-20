@@ -88,19 +88,19 @@
                     </tr>
                     {% endfor %}
                     <tr>
-                        <td class="pt-5 text-right" colspan="5">
+                        <td class="pt-5 text-end" colspan="5">
                             {% include 'cart/cart-total.html' %}
                         </td>
                     </tr>
                     <tr>
-                        <td class="text-right" colspan="5">
+                        <td class="text-end" colspan="5">
                             {% include 'cart/checkout-buttons.html' %}
                         </td>
                     </tr>
                   </tbody>
               </table>
               {% else %}
-              <div class="lead">Your cart is empty!</div>
+              <div class="lead my-5">Your cart is empty!</div>
               <a href="{% url 'products' %}" class="grey-button btn btn-lg text-uppercase">
                 <span class="">
                     <i class="fa-solid fa-cart-plus"></i>
