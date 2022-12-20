@@ -31,17 +31,18 @@
                             </div>
                         <div class="col-12 col-md-6 align-self-center">
                             <div class="card-body">
-                                <h4 class="card-title">{{product.name|title}}</h4>
-                                <p class="card-text">{{ product.summary }}</p>
-                                <p class="card-text">{{ product.manufacturer|title }} {{ product.platform }}</p>
-                                <p class="card-text">£{{ product.selling_price }}</p>
+                                <h4 class="card-title fs-3">{{product.name|title}}</h4>
+                                <p class="card-title fs-4"><strong>Summary</strong></p>
+                                <p>{{ product.summary }}</p>
+                                <p class="card-text"><strong>Platform:</strong> {{ product.manufacturer|title }} {{ product.platform }}</p>
+                                <p class="card-text">£{{ product.selling_price }} per unit</p>
                                 {% if product.user_review %}
                                     <p class="card-text text-muted rating-star"><i class="fa-solid fa-star"></i> {{ product.user_review }}</p>
                                 {% else %}
                                     <p class="card-text text-muted">No Ratings</p>
                                 {% endif %}
                                 {% if request.user.is_superuser %}
-                                <div class="card-body">
+                                <div class="card-body text-center">
                                     <a href="{% url 'edit_product' product.id %}" class="btn btn btn-outline-success btn-sm card-link">Edit</a>
                                     <button class="btn btn-outline-danger btn-sm card-link" data-bs-toggle="modal" data-bs-target="#defensive_delete-{{product.id}}">Delete</button>
 
