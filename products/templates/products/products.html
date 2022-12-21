@@ -18,7 +18,7 @@
             {% if 'manufacturer' in request.GET %}
                 {% for brand in products|dictsort:'platform'  %}
                 {% ifchanged %}
-                        <h2 class="font-dark">{{brand.manufacturer|title}} Consoles</h2>
+                        <h2 class="font-dark mb-4">{{brand.manufacturer|title}} Consoles</h2>
                         {% endifchanged %}
                 {% endfor %}
                 {% for platform in search_platform|dictsort:'platform' %}
@@ -36,7 +36,7 @@
                     {% endifchanged %}
                 {% endfor %}
             {% else %}
-            <h2 class="font-dark">All Products</h2>
+            <h2 class="font-dark mb-4">All Products</h2>
                 {% for manufacturer in search_manufacturers %}
                     {% ifchanged %}
                         <a href="{% url 'products' %}?manufacturer={{ manufacturer.manufacturer__name }}"
@@ -96,7 +96,7 @@
                             {% endif %}
                         </div>
                         <div class="card-body flex-1">
-                            <p class="card-title fs-5 text-capitalize">{{product}}</p>
+                            <p class="card-title fs-5">{{product}}</p>
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">

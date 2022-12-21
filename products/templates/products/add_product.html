@@ -12,9 +12,9 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container">
+<div class="container-fluid">
     <div class="row row justify-content-center">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-sm-8">
             <hr>
             <h2 class="logo-font mb-4">Product Management</h2>
             <h5 class="text-muted"><i class="fa-solid fa-pen-to-square"></i> Add a Product</h5>
@@ -23,7 +23,7 @@
     </div>
 
     <div class="row row justify-content-center">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-sm-8">
             <form method='POST' action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
