@@ -409,7 +409,7 @@ footer ul {
   @media (min-width: 576px) {
     .message-container {
       top: 134px;
-      width: 50%;
+      width: auto;
     }
   }
   
