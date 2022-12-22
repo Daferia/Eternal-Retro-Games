@@ -1,6 +1,8 @@
-from django.shortcuts import redirect, render, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import (redirect, render,
+                              reverse, HttpResponse, get_object_or_404)
 from django.contrib import messages
 from products.models import Product
+
 
 def view_cart(request):
     '''
@@ -10,7 +12,7 @@ def view_cart(request):
 
 
 def add_to_cart(request, item_id):
-    ''' 
+    '''
     Add a qty of the individual item to the cart
     '''
     product = get_object_or_404(Product, pk=item_id)
@@ -21,12 +23,12 @@ def add_to_cart(request, item_id):
 
     if item_id in list(cart.keys()):
         cart[item_id] += quantity
-        messages.success(request, f'Updated {product.name} quantity to {cart[item_id]}')
+        messages.success(request,
+                         f'Updated {product.name} quantity to {cart[item_id]}')
 
     else:
         cart[item_id] = quantity
         messages.success(request, f'Added {product.name} to your bag')
-
 
     request.session['cart'] = cart
 
@@ -34,7 +36,7 @@ def add_to_cart(request, item_id):
 
 
 def update_cart(request, item_id):
-    ''' 
+    '''
     Update a qty of the individual item in cart page
     '''
     product = get_object_or_404(Product, pk=item_id)
@@ -44,10 +46,12 @@ def update_cart(request, item_id):
 
     if quantity > 0:
         cart[item_id] = quantity
-        messages.success(request, f'Updated {product.name} quantity to {cart[item_id]}')
+        messages.success(request,
+                         f'Updated {product.name} quantity to {cart[item_id]}')
     else:
         cart.pop(item_id)
-        messages.success(request, f'Removed {product.name} to your shopping cart')
+        messages.success(request,
+                         f'Removed {product.name} to your shopping cart')
 
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
@@ -62,7 +66,8 @@ def remove_from_cart(request, item_id):
         cart = request.session.get('cart', {})
 
         cart.pop(item_id)
-        messages.success(request, f'Removed {product.name} to your shopping cart')
+        messages.success(request,
+                         f'Removed {product.name} to your shopping cart')
 
         request.session['cart'] = cart
         return HttpResponse(status=200)

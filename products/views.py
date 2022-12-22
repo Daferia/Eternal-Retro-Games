@@ -7,11 +7,12 @@ from django.db.models.functions import Lower
 from .models import Product, Manufacturer
 from .forms import ProductForm
 
+
 def all_products(request):
     '''
     A view for all products including searches
     '''
-  
+
     products = Product.objects.all()
     platform_list = None
     query = None
@@ -45,7 +46,8 @@ def all_products(request):
 
             # if not data is enter into searchbar
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(request,
+                               "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(
@@ -54,7 +56,8 @@ def all_products(request):
 
             # if value is not found display this message
             if not products:
-                messages.info(request, f'We found zero products called {query}')
+                messages.info(request,
+                              f'We found zero products called {query}')
                 return redirect(reverse('products'))
 
     current_sorting = f'{sort}_{direction}'
@@ -62,14 +65,13 @@ def all_products(request):
     context = {
         'products': products,
         'search_term': query,
-        'current_sorting':current_sorting,
+        'current_sorting': current_sorting,
         'search_manufacturers': manufacturers,
         'search_platform': platform_list,
 
     }
 
     return render(request, 'products/products.html', context)
-
 
 
 def product_detail(request, product_id):
@@ -88,11 +90,11 @@ def product_detail(request, product_id):
 @login_required
 def add_product(request):
     """ Add a product to the store """
-    
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -100,7 +102,9 @@ def add_product(request):
             messages.success(request, 'Succesfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request,
+                           'Failed to add product.\
+                            Please ensure the form is valid.')
     else:
         form = ProductForm()
 
@@ -115,7 +119,7 @@ def add_product(request):
 @login_required
 def edit_product(request, product_id):
     """ edit a product """
-    
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -128,7 +132,9 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(request,
+                           'Failed to update product.\
+                           Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -145,7 +151,7 @@ def edit_product(request, product_id):
 @login_required
 def delete_product(request, product_id):
     """ Delete a product from the store """
-    
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -154,5 +160,3 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
-
-
