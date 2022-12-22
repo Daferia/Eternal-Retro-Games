@@ -12,7 +12,7 @@ def contact(request):
 
     if request.method == 'POST':
         form = ContactForm(request.POST)
-        profile = UserProfile.objects.get(user=request.user)
+        
         if form.is_valid():
             subject = "Website Inquiry" 
             body = {
@@ -28,8 +28,8 @@ def contact(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect (reverse('home'))
-      
-    form = ContactForm()
+    else: 
+        form = ContactForm()
 
     template = 'contact/contact.html'
     context = {
