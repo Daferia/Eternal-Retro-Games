@@ -22,6 +22,7 @@
     <div class="row">
         <div class="col">
             <div class="d-block d-md-none">
+                {% if cart_items %}
                 <div class="row">
                     <div class="col">
                         {% include 'cart/cart-total.html' %}
@@ -55,7 +56,17 @@
                     </div>
                 </div>
                 {% endfor %}
-            </div>
+
+            {% else %}
+            <div class="lead my-5">Your cart is empty!</div>
+            <a href="{% url 'products' %}" class="grey-button btn btn-lg text-uppercase">
+              <span class="">
+                  <i class="fa-solid fa-cart-plus"></i>
+                  Keep Shopping
+              </span>
+            </a>
+              {% endif %}
+                    </div>
             {% if cart_items %}
             <table class="table d-none d-md-block">  
                     <thead class="table-active">
@@ -100,13 +111,14 @@
                   </tbody>
               </table>
               {% else %}
+              <div class="col d-none d-md-block">
               <div class="lead my-5">Your cart is empty!</div>
               <a href="{% url 'products' %}" class="grey-button btn btn-lg text-uppercase">
                 <span class="">
                     <i class="fa-solid fa-cart-plus"></i>
                     Keep Shopping
                 </span>
-            </a>
+            </a></div>
             {% endif %}
         </div>
     </div>
