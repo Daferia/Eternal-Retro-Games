@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Product, Manufacturer
 
+
 # Register your models here.
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
@@ -13,6 +14,7 @@ class ProductAdmin(admin.ModelAdmin):
     )
 
     ordering = ('name',)
+
 
 class ManufacturerAdmin(admin.ModelAdmin):
     list_display = (
