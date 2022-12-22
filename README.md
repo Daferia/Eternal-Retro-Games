@@ -181,7 +181,7 @@ I used the  [Balsamiq](https://balsamiq.com/) to create the wireframes of the fi
 
   ![Base Template Wireframe](documentation/wireframes/base.png)
 
-* Home Page - Simplae view with minimal text to almost guide the user to the view products button to start shopping
+* Home Page - Simple view with minimal text to almost guide the user to the view products button to start shopping
 
   ![Home Page Wireframe](documentation/wireframes/home.png)
 
@@ -192,7 +192,7 @@ I used the  [Balsamiq](https://balsamiq.com/) to create the wireframes of the fi
   ![Register Page Wireframe](documentation/wireframes/register.png)
 
 * Login Page - The login page will allow users to sign into their account with either their username or email.
-* 
+
   ![Login Page Wireframe](documentation/wireframes/login.png)
 
 * Logout Page - The logout page confirms that the user to confirm wants to logout. On confirming, the user will be logged out of their account, cart cleared and redirected to the home page.
@@ -201,8 +201,7 @@ I used the  [Balsamiq](https://balsamiq.com/) to create the wireframes of the fi
 
 * Profile Page - The profile page displays a users default delivery information and previous order history, They can view these order and update their information Including adding a First name and Surname for quicker checkout.
 
-  ![Profile Page Wireframe](documentation/wireframes/profile.png)
-
+  ![Profile Page Wireframe](documentation/wireframes/profile_page.png)
 
 * Cart Page with items - When a user has added items to their cart, The product information will be shown as well as quantity, value and grand total There will be a secure checkout button and continue shooping button as well. The can adjust and delete products from this view as well.
 
@@ -210,7 +209,7 @@ I used the  [Balsamiq](https://balsamiq.com/) to create the wireframes of the fi
 
 * Cart page - Empty - The cat page will display a message stating the cart is empty and have a button directing them to the products.
 
-  ![Empty cart Page Wireframe](documentation/wireframes/cart-empty.png)
+  ![Empty cart Page Wireframe](documentation/wireframes/cart_empty.png)
   
 * Checkout Page - The checkout page has a form for the user to fill in their name, contact number, email address and delivery address. They also have an option to save these details to their profile once the order is placed. On returning clients this will prepoplulate with the information saved on their profile.
 
@@ -222,35 +221,27 @@ I used the  [Balsamiq](https://balsamiq.com/) to create the wireframes of the fi
 
 * Payment Processing Overlay - On submitting the payment, the user will see a payment overlay with a credit card flipping so they feel and can see that this payment is being processed. The overlay does not do anything more than be a visual cue that payemnt is being submitted but in reality has no functionality. Once payment has been processed, the user will be directed to the checkout success page with a summary of the order.
 
-  ![Payment Processing Overlay Wireframe](documentation/wireframes/payment-processing-overlay.png)
+  ![Payment Processing Overlay Wireframe](documentation/wireframes/processing_details.png)
 
 * Checkout Success -
 
-  ![Checkout Success Page Wireframe](documentation/wireframes/checkout-success.png)
+  ![Checkout Success Page Wireframe](documentation/wireframes/success_page.png)
 
 * Products - client/guest - the products are displayed in borderless cards that will automatically resize to the diffrent view ports.
 
-  ![Products Page Wireframe](documentation/wireframes/products.png)
-
-* Products - Admin View - The admin view of the products page is the same as the client/guest except that there are 2 buttons, edit and delete.
-
-  ![Products Admin View Page Wireframe](documentation/wireframes/products-admin-view.png)
+  ![Products Page Wireframe](documentation/wireframes/product_view.png)
 
 * Product Detail - the product details page is displayed in borderless cards that will automatically resize to the diffrent view ports, This view has the title, price, platform, summary and rating for that product.you can adjust the quantity you wish to purchase and there are 2 buttons, Keep Shopping and Add to cart
 
-  ![Product Detail Page Wireframe](documentation/wireframes/product-detail.png)
-
-* Product Detail (Admin View) - Same as the client/guest view but there are 2 additional buttons - Edit and Delete
-
-  ![Product Detail Page Admin View Wireframe](documentation/wireframes/product-detail-admin-view.png)
+  ![Product Detail Page Wireframe](documentation/wireframes/product_details.png)
 
 * Edit Product - The Edit product page is only accessible to admin/superuser users. It displays a prepopluated form, with the information about the product they are editing.
 
-  ![Edit Product Page Wireframe](documentation/wireframes/edit-product.png)
+  ![Edit Product Page Wireframe](documentation/wireframes/edit_product.png)
 
 * Delete Product - The Delete product page is only accessible to admin/superuser users. On clicking there will be a modal asking the user if they want to delete this product and warning them that it cannot be undone.
 
-  ![Delete Product Page Wireframe](documentation/wireframes/delete-product.png)
+  ![Delete Product Page Wireframe](documentation/wireframes/delete.png)
 
 * Toasts - Toasts are used to provide quick informaive messages of actions taken by a user. If a product is added to the cart, a successful toast will apprear diaply it has been added with a summry of the cart.
 * There are 4 categories of toast:
