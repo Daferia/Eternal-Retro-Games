@@ -1,37 +1,38 @@
-<form class="navbar-form d-none d-md-none d-lg-inline-flex align-self-center justify-content-end flex-grow-1" method="GET" action="{% url 'products' %}">
-    <input type="text" class="form-control" placeholder="Search..." name="q">
-  </form>
-  <ul class="nav fs-6 d-none d-md-none d-lg-inline-flex ms-auto flex-shrink-1" >
-    <li class="nav-item dropdown">
-      <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <div class="text-center dropdown-style font-dark">
-            <i class="fas fa-user fa-lg"></i>
-          <p class="my-0 ">My Account</p>
-        </div>
-      </a>
-      <div class="dropdown-menu border-0" aria-labelledby="user-options">
-        {% if request.user.is_authenticated %}
-        {% if request.user.is_superuser %}
-        <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-        {% endif %}
-        <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-        {% else %}
-        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-        {% endif %}
-    </li>
-    <li class="nav-item"><a href="{% url 'view_cart' %}"
-      class="{% if grand_total %}added-to-cart font-weight-bold{% else %} font-dark{% endif %} nav-link">
-      <div class="text-center dropdown-style">
-        <i class="fa-solid fa-cart-shopping fa-lg"></i>
-        <p class="my-0">
-          {% if grand_total %}
-          £{{ grand_total|floatformat:2 }}
-          {% else %}
-          £0.00
-          {% endif %}
-        </p>
-      </div>
-    </a></li>
-  </ul>
+<form class="navbar-form d-none d-md-none d-lg-inline-flex align-self-center justify-content-end flex-grow-1"
+	method="GET" action="{% url 'products' %}">
+	<input type="text" class="form-control" placeholder="Search..." name="q">
+</form>
+<ul class="nav fs-6 d-none d-md-none d-lg-inline-flex ms-auto flex-shrink-1">
+	<li class="nav-item dropdown">
+		<a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			<div class="text-center dropdown-style font-dark">
+				<i class="fas fa-user fa-lg"></i>
+				<p class="my-0 ">My Account</p>
+			</div>
+		</a>
+		<div class="dropdown-menu border-0" aria-labelledby="user-options">
+			{% if request.user.is_authenticated %}
+			{% if request.user.is_superuser %}
+			<a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+			{% endif %}
+			<a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+			<a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+			{% else %}
+			<a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+			<a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+			{% endif %}
+	</li>
+	<li class="nav-item"><a href="{% url 'view_cart' %}"
+			class="{% if grand_total %}added-to-cart font-weight-bold{% else %} font-dark{% endif %} nav-link">
+			<div class="text-center dropdown-style">
+				<i class="fa-solid fa-cart-shopping fa-lg"></i>
+				<p class="my-0">
+					{% if grand_total %}
+					£{{ grand_total|floatformat:2 }}
+					{% else %}
+					£0.00
+					{% endif %}
+				</p>
+			</div>
+		</a></li>
+</ul>

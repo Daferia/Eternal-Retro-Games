@@ -27,11 +27,11 @@
             <form method='POST' action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
-                    {% if field.name != 'image' %}
-                        {{ field | as_crispy_field }}
-                    {% else %}
-                        {{ field }}
-                    {% endif %}
+                {% if field.name != 'image' %}
+                {{ field | as_crispy_field }}
+                {% else %}
+                {{ field }}
+                {% endif %}
                 {% endfor %}
                 <div class="text-end">
                     <a href="{% url 'products' %}" class="btn grey-button text-uppercase">Cancel</a>
@@ -44,17 +44,16 @@
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.user }}
-    <script type="text/javascript">
-        $('#new-image').change(function() {
-            let file = $('#new-image')[0].files[0];
-            $('#filename').text(`Image will be set to ${file.name}`)
-        })
-    </script>
-      <script>
-        $(document).ready(function(){
-            $(".toast").toast('show'); 
-        });
-        </script>
+{{ block.user }}
+<script type="text/javascript">
+    $('#new-image').change(function () {
+        let file = $('#new-image')[0].files[0];
+        $('#filename').text(`Image will be set to ${file.name}`)
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        $(".toast").toast('show');
+    });
+</script>
 {% endblock%}
-

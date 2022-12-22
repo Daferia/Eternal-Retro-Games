@@ -3,12 +3,12 @@
 {% load bag_tools %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col">
-            </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
         </div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -57,28 +57,28 @@
                 </div>
                 {% endfor %}
 
-            {% else %}
-            <div class="lead my-5">Your cart is empty!</div>
-            <a href="{% url 'products' %}" class="grey-button btn btn-lg text-uppercase">
-              <span class="">
-                  <i class="fa-solid fa-cart-plus"></i>
-                  Keep Shopping
-              </span>
-            </a>
-              {% endif %}
-                    </div>
+                {% else %}
+                <div class="lead my-5">Your cart is empty!</div>
+                <a href="{% url 'products' %}" class="grey-button btn btn-lg text-uppercase">
+                    <span class="">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        Keep Shopping
+                    </span>
+                </a>
+                {% endif %}
+            </div>
             {% if cart_items %}
-            <table class="table d-none d-md-block">  
-                    <thead class="table-active">
-                        <tr>
-                            <th scope="col">Product Info</th>
-                            <th scope="col"></th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">Subtotal</th>
-                        </tr>
-                    </thead>
-                   <tbody>
+            <table class="table d-none d-md-block">
+                <thead class="table-active">
+                    <tr>
+                        <th scope="col">Product Info</th>
+                        <th scope="col"></th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
                     {% for item in cart_items %}
                     <tr>
                         <td class="p-3 w-25">
@@ -108,17 +108,18 @@
                             {% include 'cart/checkout-buttons.html' %}
                         </td>
                     </tr>
-                  </tbody>
-              </table>
-              {% else %}
-              <div class="col d-none d-md-block">
-              <div class="lead my-5">Your cart is empty!</div>
-              <a href="{% url 'products' %}" class="grey-button btn btn-lg text-uppercase">
-                <span class="">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    Keep Shopping
-                </span>
-            </a></div>
+                </tbody>
+            </table>
+            {% else %}
+            <div class="col d-none d-md-block">
+                <div class="lead my-5">Your cart is empty!</div>
+                <a href="{% url 'products' %}" class="grey-button btn btn-lg text-uppercase">
+                    <span class="">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        Keep Shopping
+                    </span>
+                </a>
+            </div>
             {% endif %}
         </div>
     </div>
@@ -131,7 +132,7 @@
 
 {% endblock %}
 {% block postloadjs %}
-    {{ block.super }}
-    {% include 'products/includes/quantity_input_script.html' %}
-    {% include 'cart/includes/cart_input_quantity.html' %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
+{% include 'cart/includes/cart_input_quantity.html' %}
 {% endblock postloadjs %}

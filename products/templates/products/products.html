@@ -169,8 +169,8 @@
 
     <script type="text/javascript">
         $('.scroll-to-top').click(function(e){
-            window.scrollTo(0,0)
-        })
+            window.scrollTo(0,0);
+        });
     </script>
     <script type="text/javascript">
         $('#sort-selector').change(function() {
@@ -178,7 +178,7 @@
             let currentUrl = new URL(window.location);
 
             var selectedVal = selector.val();
-            console.log(selectedVal)
+            console.log(selectedVal);
             if(selectedVal != "reset"){
                 let sort = selectedVal.split("_").slice(0, -1).join('_');
                 let direction = selectedVal.split("_").pop();
@@ -194,6 +194,6 @@
 
                 window.location.replace(currentUrl);
             }
-        })
+        });
     </script>
 {% endblock %}

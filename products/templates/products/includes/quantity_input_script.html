@@ -7,7 +7,7 @@
         let closestInput = $(this).closest('.input-group').find('.qty_input')[0];
         let currentValue = parseInt($(closestInput).val());
         var allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
-        $(allQuantityInputs).val(currentValue + 1)
+        $(allQuantityInputs).val(currentValue + 1);
         handleEnableDisable(itemId);
     });
 
@@ -19,7 +19,7 @@
         let closestInput = $(this).closest('.input-group').find('.qty_input')[0];
         let currentValue = parseInt($(closestInput).val());
         var allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
-        $(allQuantityInputs).val(currentValue -1)
+        $(allQuantityInputs).val(currentValue -1);
         handleEnableDisable(itemId);
     });
 

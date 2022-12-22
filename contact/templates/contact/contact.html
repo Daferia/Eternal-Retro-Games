@@ -12,34 +12,35 @@
 
 {% block content %}
 <div class="overlay"></div>
-    <!--Contact form-->
-    <div class="container-fluid">
-        <div class="row h-100 justify-content-center">
-            <div class="col-12 col-sm-8 col-lg-6">
-                <hr>
-                <h2 class="logo-font mb-4">Contact Us</h2>
-                <h5 class="text-muted"><i class="fa-solid fa-file-contract"></i> Contact Form</h5>
-                <hr>
-            </div>
+<!--Contact form-->
+<div class="container-fluid">
+    <div class="row h-100 justify-content-center">
+        <div class="col-12 col-sm-8 col-lg-6">
+            <hr>
+            <h2 class="logo-font mb-4">Contact Us</h2>
+            <h5 class="text-muted"><i class="fa-solid fa-file-contract"></i> Contact Form</h5>
+            <hr>
         </div>
-    
-        <div class="row row justify-content-center">
-            <div class="col-12 col-sm-8 col-lg-6">
-		<h5>Contact us directly if you have any questions</h5>
-		<p>
-			Please fill in the form below and we will be happy to contact you directly and answer your questions as soon as possible. 
-		</p>
-		<form method="post">
-        {% csrf_token %}
-            {{form|crispy}}
-            <div class="text-end">
-            <button class="grey-button" type="submit">Submit</button>
-        </div>
-        </form>
     </div>
 
-    {% endblock %}
+    <div class="row row justify-content-center">
+        <div class="col-12 col-sm-8 col-lg-6">
+            <h5>Contact us directly if you have any questions</h5>
+            <p>
+                Please fill in the form below and we will be happy to contact you directly and answer your questions as
+                soon as possible.
+            </p>
+            <form method="post">
+                {% csrf_token %}
+                    {{form|crispy}}
+                <div class="text-end">
+                    <button class="grey-button" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
 
-{% block postloadjs %}
+        {% endblock %}
 
-{% endblock %}
+        {% block postloadjs %}
+
+        {% endblock %}
