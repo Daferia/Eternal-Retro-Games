@@ -62,6 +62,7 @@ The site uses the walkthrough Boutique Ado as part of a template layout but have
   * [Content](#content)
   * [Media](#media)
   * [Acknowledgments](#acknowledgments)
+* [Additonal Comment](#additional-comments)
 
 ---
 
@@ -686,6 +687,7 @@ Please refer to the [TESTING.md](TESTING.md) file for all testing performed.
 ### Media
 [The Old Computer](https://www.theoldcomputer.com/game-box-art-covers/) - Gaming images sourced from The Old Computer
 [unsplash](https://unsplash.com/@derekstory) - Home image
+[Arcade Artwork](https://www.arcadeartwork.org/index.php?/category/413/start-496#top) - Game cover artwork
 
 ### Acknowledgments
 
@@ -693,6 +695,10 @@ I would like to acknowledge the following people who have helped me with complet
 [Simen Daehlin](https://github.com/Eventyret) - Code Institute Mentor. 
 [Rhys Davies](https://github.com/RD4899) - Work Mentor
 [Ethan Morgan](https://github.com/gweithio) - Work Mentor
+
+---
+## Additional Comments
+
 
 ---
 
