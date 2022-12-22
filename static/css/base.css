@@ -48,6 +48,7 @@ header,
 }
 
 header,
+.about-us,
 .search-form,
 .dropdown-menu {
   background-color: var(--cool-blue);
@@ -55,7 +56,6 @@ header,
 
 .dropdown-menu {
   width: fit-content;
-  border: 1px solid var(--dark);
 }
 
   /* Set the border color  - code from Geeks for Geeks */
@@ -159,7 +159,7 @@ header,
 .message-container {
   position: fixed;
   top: 7.75rem;
-  right: 0.938 rem;
+  right: 0.938rem;
   z-index: 999999;
   width: 80%;
 }

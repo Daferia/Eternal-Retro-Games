@@ -43,8 +43,8 @@
                                 {% endif %}
                                 {% if request.user.is_superuser %}
                                 <div class="card-body text-center">
-                                    <a href="{% url 'edit_product' product.id %}" class="btn btn btn-outline-success btn-sm card-link">Edit</a>
-                                    <button class="btn btn-outline-danger btn-sm card-link" data-bs-toggle="modal" data-bs-target="#defensive_delete-{{product.id}}">Delete</button>
+                                    <a href="{% url 'edit_product' product.id %}" class="btn btn btn-outline-dark btn-sm card-link text-uppercase">Edit</a>
+                                    <button class="btn btn-outline-danger btn-sm card-link text-uppercase" data-bs-toggle="modal" data-bs-target="#defensive_delete-{{product.id}}">Delete</button>
 
                                       {% include 'products/includes/delete_modal.html' %}
 

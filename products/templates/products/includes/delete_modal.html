@@ -2,15 +2,15 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content border border-danger">
         <div class="modal-header bg-danger">
-          <h1 class="modal-title text-light fs-5" id="exampleModalLabel"><i class="fa-solid fa-trash"></i> Delete {{ product.name }}</h1>
+          <h1 class="modal-title text-light fs-5 text-uppercase" id="exampleModalLabel"><i class="fa-solid fa-trash"></i> Delete {{ product.name }}</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body fw-bold">
           Are you sure you want to delete {{ product.name}}? <span class="text-danger text-uppercase">This cannot be undone!</span>
         </div>
         <div class="modal-footer border-top border-danger">
-          <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
-          <a href="{% url 'delete_product' product.id %}" class="btn btn-outline-danger btn-sm card-link">Delete</a>
+          <button type="button" class="btn btn-outline-secondary btn-sm text-uppercase" data-bs-dismiss="modal">Close</button>
+          <a href="{% url 'delete_product' product.id %}" class="btn btn-outline-danger btn-sm card-link text-uppercase">Delete</a>
         </div>
       </div>
     </div>
