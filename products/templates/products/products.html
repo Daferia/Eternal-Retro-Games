@@ -36,7 +36,7 @@
                     {% endifchanged %}
                 {% endfor %}
             {% else %}
-            <h2 class="font-dark mb-4">All Products</h2>
+            <h2 class="font-dark mb-4">Products</h2>
                 {% for manufacturer in search_manufacturers %}
                     {% ifchanged %}
                         <a href="{% url 'products' %}?manufacturer={{ manufacturer.manufacturer__name }}"
