@@ -61,10 +61,13 @@
                             <option value="user_review_desc" {% if current_sorting == 'user_review_desc' %}selected{% endif %}>Rating (high to low)</option>
                             <option value="year_of_release_asc" {% if current_sorting == 'year_of_release_asc' %}selected{% endif %}>Year of Release (Older-Recent)</option>
                             <option value="year_of_release_desc" {% if current_sorting == 'year_of_release_desc' %}selected{% endif %}>Year of Release (Recent-Older)</option>
+                            {% if 'manufacturer' in request.GET or 'platform' in request.GET %}
+                            {% else %}
                             <option value="manufacturer_asc" {% if current_sorting == 'manufacturer_asc' %}selected{% endif %}>Manufacturer (A-Z)</option>
                             <option value="manufacturer_desc" {% if current_sorting == 'manufacturer_desc' %}selected{% endif %}>Manufacturer (Z-A)</option>
                             <option value="platform_asc" {% if current_sorting == 'platform_asc' %}selected{% endif %}>Platform (A-Z)</option>
                             <option value="platform_desc" {% if current_sorting == 'platform_desc' %}selected{% endif %}>Platform (Z-A)</option>
+                            {% endif %}
                         </select>
                     </div> 
                 </div>
