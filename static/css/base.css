@@ -134,7 +134,7 @@ header,
   border-radius: 0.313rem !important;
 }
 
-/* Checkbox styling for crsipy forms */
+/* Checkbox styling for crispy forms */
 
 .form-check-input:checked{
   background-color: var(--dark);
