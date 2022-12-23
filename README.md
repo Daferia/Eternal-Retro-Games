@@ -10,6 +10,8 @@ The site uses the walkthrough Boutique Ado as part of a template layout but have
 
 [View the live website deployed on Heroku](https://eternal-retro-games.herokuapp.com/)
 
+[View Snapshots of live website](static/documentation/images/website_snapshots)
+
 ---
 ## Contents
 
@@ -116,7 +118,7 @@ Further goals:
 * Social Media Links
 
 #### Future Features
-* Admin - Stock managment
+* Admin - Stock management
 * Wishlist
 * Product Reviews
 * Use social media to sign up/log in
@@ -270,13 +272,12 @@ I have used the following colours:
 
 I have used colours that I matched on Coolors as well as pattern trends. Main site used the cool blue but for the main products, checkout, and cart i have decided to keep it white.
 
-![Colour Scheme for Eternal Retro Games](static/documentation/colour-theme.png)
+![Colour Scheme for Eternal Retro Games](static/documentation/images/eternal%20retro%20games.png)
 
 #### **Typography**
 
-I have used the default font from Django.
+I have used the default fonts from Django.
 
-![Fonts Chosen for the site](static/documentation/fonts.png)
 
 \
 &nbsp;
@@ -287,9 +288,11 @@ I have used the default font from Django.
 
 #### **Imagery**
 
-Images are kept to the product images.
+Images are kept [Here](static/documentation/images/products_images/) but not included in the json products files. These will need to be uploaded or a user can choose to add the file name to the image field in the products.json file.
+
 
 There is a home page image on arrival but everything else follows a clean minimilist style to is. Mainly to draw the user to the products.
+![Home Page Image](media/derek-story-jrqeb5o7H2U-unsplash-med.jpg)
 
 ---
 ## Features
@@ -302,7 +305,7 @@ Each page of the site shares the following:
 * Navbar
 * Footer
 
-site pages images
+[View Snapshots of live website](static/documentation/images/website_snapshots)
 
 
 \
@@ -315,6 +318,11 @@ site pages images
 ### Future Implementations
 
 In future implementations I would like to:
+
+* Add a stock management system
+* add a Admin user app to manage users, promotions and newsletters
+* change the buttons to manufacturer logos and platform buttons to platform logos
+* have the navigation automatically update to the database information and generate the links so that if new platforms are added this ill be added automatically
 
 ---
 
@@ -339,9 +347,9 @@ sqlite3 for development - default with Django
 
 ### Frameworks Used
 
-[Django](https://www.djangoproject.com/) - Version 4.1.3 -
+[Django](https://www.djangoproject.com/) - Version 4.1.3
 
-[Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - Version 5.2.3.
+[Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - Version 5.2.3
 
 ### Libraries & Packages Used
 
