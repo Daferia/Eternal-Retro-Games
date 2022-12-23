@@ -1,6 +1,6 @@
 # Eternal Retro Games
 
-![Responsive Image]()
+![Responsive Image](static/documentation/images/website_screenshot.png)
 
 Eternal Retro Game is my first full stack website built using Django, Python, HTML, CSS and JQuery. This is e-commerce site that was inspired by a passion for keeping gaming, in particular retro gaming, where the user can shop for nostalgic relics of the very loaved industry. This website utilises Stripe payment provider.
 
