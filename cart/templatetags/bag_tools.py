@@ -1,6 +1,6 @@
 from django import template
 
-register = template.Library() 
+register = template.Library()
 
 # look up create custom tags and filter on django docs
 
@@ -8,4 +8,3 @@ register = template.Library()
 @register.filter(name='calc_subtotal')
 def calc_subtotal(price, quantity):
     return price * quantity
-

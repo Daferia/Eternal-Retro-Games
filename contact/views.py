@@ -4,8 +4,6 @@ from django.contrib import messages
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 
-from profiles.models import UserProfile
-
 
 def contact(request):
     ''' Form to contact Store '''
