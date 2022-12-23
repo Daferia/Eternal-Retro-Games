@@ -682,7 +682,7 @@ Please follow the pipenv docs [Pipenv](https://pipenv.pypa.io/en/latest/index.ht
 
 ---
 ## Testing
-Please refer to the [TESTING.md](TESTING.md) file for all testing performed.
+Please refer to the [TESTING.MD](TESTING.MD) file for all testing performed.
 
 ---
 
