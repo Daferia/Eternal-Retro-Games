@@ -96,10 +96,8 @@
                             profile</label>
                         <input type="checkbox" name="save-info" class="form-check-input ml-2 mr-0" checked>
                         {% else %}
-                        <label for="id-save-info" class="form-check-label">
                             <a href="{% url 'account_signup' %}" class="text-info">Create an account</a> or
                             <a href="{% url 'account_login' %}" class="text-info">Login</a> to save this information.
-                        </label>
                         {% endif %}
                     </div>
                 </fieldset>
@@ -136,11 +134,11 @@
     </div>
 </div>
 <div id="loading-overlay">
-    <h1 class="text-light logo-font loading-spinner">
+    <p class="text-light logo-font loading-spinner">
         <span class="icon">
             <i class="fa-solid fa-5x fa-money-bill-transfer fa-flip"></i>
         </span>
-    </h1>
+    </p>
 </div>
 {% endblock %}
 
