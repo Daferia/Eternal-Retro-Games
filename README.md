@@ -180,37 +180,37 @@ I used the  [Balsamiq](https://balsamiq.com/) to create the wireframes of the fi
 
 * Base Template - This is a basic layout view that contains the Header and fotter. All navigation is on this this template and all other pages will be placed within the main section of the base template. This is all donne using Django and builtin templates language.
 
-  ![Base Template Wireframe](documentation/wireframes/base.png)
+  ![Base Template Wireframe](static/documentation/wireframes/base.png)
 
 * Home Page - Simple view with minimal text to almost guide the user to the view products button to start shopping
 
-  ![Home Page Wireframe](documentation/wireframes/home.png)
+  ![Home Page Wireframe](static/documentation/wireframes/home.png)
 
 * Register Page - The register page allows new users to register for an account by registering for an account with a username/email.
 
   The username/email path will require users to choose a username, a password which will be entered twice to confirm the user hasn't made an error when entering the password and their email address, which again will be required to be entered twice to confirm there are no mistakes in the users input.
 
-  ![Register Page Wireframe](documentation/wireframes/register.png)
+  ![Register Page Wireframe](static/documentation/wireframes/register.png)
 
 * Login Page - The login page will allow users to sign into their account with either their username or email.
 
-  ![Login Page Wireframe](documentation/wireframes/login.png)
+  ![Login Page Wireframe](static/documentation/wireframes/login.png)
 
 * Logout Page - The logout page confirms that the user to confirm wants to logout. On confirming, the user will be logged out of their account, cart cleared and redirected to the home page.
 
-  ![Log out Page Wireframe](documentation/wireframes/logout.png)
+  ![Log out Page Wireframe](static/documentation/wireframes/logout.png)
 
 * Profile Page - The profile page displays a users default delivery information and previous order history, They can view these order and update their information Including adding a First name and Surname for quicker checkout.
 
-  ![Profile Page Wireframe](documentation/wireframes/profile_page.png)
+  ![Profile Page Wireframe](static/documentation/wireframes/profile_page.png)
 
 * Cart Page with items - When a user has added items to their cart, The product information will be shown as well as quantity, value and grand total There will be a secure checkout button and continue shooping button as well. The can adjust and delete products from this view as well.
 
-  ![cart Page Wireframe](documentation/wireframes/cart.png)
+  ![cart Page Wireframe](static/documentation/wireframes/cart.png)
 
 * Cart page - Empty - The cat page will display a message stating the cart is empty and have a button directing them to the products.
 
-  ![Empty cart Page Wireframe](documentation/wireframes/cart_empty.png)
+  ![Empty cart Page Wireframe](static/documentation/wireframes/cart_empty.png)
   
 * Checkout Page - The checkout page has a form for the user to fill in their name, contact number, email address and delivery address. They also have an option to save these details to their profile once the order is placed. On returning clients this will prepoplulate with the information saved on their profile.
 
@@ -218,31 +218,31 @@ I used the  [Balsamiq](https://balsamiq.com/) to create the wireframes of the fi
 
   The user will also be shown a summary of the products they are purchasing. This consists of an image of the product, the title of the product, a size if applicable, the quantity they are purchasing and the subtotal for that product. Underneath the summary are the subtotal, delivery costs and grand total.
 
-  ![Checkout Page Wireframe](documentation/wireframes/checkout.png)
+  ![Checkout Page Wireframe](static/documentation/wireframes/checkout.png)
 
 * Payment Processing Overlay - On submitting the payment, the user will see a payment overlay with a credit card flipping so they feel and can see that this payment is being processed. The overlay does not do anything more than be a visual cue that payemnt is being submitted but in reality has no functionality. Once payment has been processed, the user will be directed to the checkout success page with a summary of the order.
 
-  ![Payment Processing Overlay Wireframe](documentation/wireframes/processing_details.png)
+  ![Payment Processing Overlay Wireframe](static/documentation/wireframes/processing_details.png)
 
 * Checkout Success -
 
-  ![Checkout Success Page Wireframe](documentation/wireframes/success_page.png)
+  ![Checkout Success Page Wireframe](static/documentation/wireframes/success_page.png)
 
 * Products - client/guest - the products are displayed in borderless cards that will automatically resize to the diffrent view ports.
 
-  ![Products Page Wireframe](documentation/wireframes/product_view.png)
+  ![Products Page Wireframe](static/documentation/wireframes/product_view.png)
 
 * Product Detail - the product details page is displayed in borderless cards that will automatically resize to the diffrent view ports, This view has the title, price, platform, summary and rating for that product.you can adjust the quantity you wish to purchase and there are 2 buttons, Keep Shopping and Add to cart
 
-  ![Product Detail Page Wireframe](documentation/wireframes/product_details.png)
+  ![Product Detail Page Wireframe](static/documentation/wireframes/product_details.png)
 
 * Edit Product - The Edit product page is only accessible to admin/superuser users. It displays a prepopluated form, with the information about the product they are editing.
 
-  ![Edit Product Page Wireframe](documentation/wireframes/edit_product.png)
+  ![Edit Product Page Wireframe](static/documentation/wireframes/edit_product.png)
 
 * Delete Product - The Delete product page is only accessible to admin/superuser users. On clicking there will be a modal asking the user if they want to delete this product and warning them that it cannot be undone.
 
-  ![Delete Product Page Wireframe](documentation/wireframes/delete.png)
+  ![Delete Product Page Wireframe](static/documentation/wireframes/delete.png)
 
 * Toasts - Toasts are used to provide quick informaive messages of actions taken by a user. If a product is added to the cart, a successful toast will apprear diaply it has been added with a summry of the cart.
 * There are 4 categories of toast:
@@ -251,7 +251,7 @@ I used the  [Balsamiq](https://balsamiq.com/) to create the wireframes of the fi
     * Error
     * Info
 
-  ![Toasts Wireframe](documentation/wireframes/toasts.png)
+  ![Toasts Wireframe](static/documentation/wireframes/toasts.png)
 
 
   \
@@ -270,13 +270,13 @@ I have used the following colours:
 
 I have used colours that I matched on Coolors as well as pattern trends. Main site used the cool blue but for the main products, checkout, and cart i have decided to keep it white.
 
-![Colour Scheme for Eternal Retro Games](documentation/colour-theme.png)
+![Colour Scheme for Eternal Retro Games](static/documentation/colour-theme.png)
 
 #### **Typography**
 
 I have used the default font from Django.
 
-![Fonts Chosen for the site](documentation/fonts.png)
+![Fonts Chosen for the site](static/documentation/fonts.png)
 
 \
 &nbsp;
