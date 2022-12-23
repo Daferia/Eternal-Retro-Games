@@ -33,12 +33,11 @@
                             <h4 class="card-title fs-3">{{product.name|title}}</h4>
                             <p class="card-title fs-4"><strong>Summary</strong></p>
                             <p>{{ product.summary }}</p>
-                            <p class="card-text"><strong>Platform:</strong> {{ product.manufacturer|title }} {{
-                                product.platform }}</p>
+                            <p class="card-text"><strong>Platform:</strong> {{ product.manufacturer|title }} {{ product.platform }}</p>
                             <p class="card-text">£{{ product.selling_price }} per unit</p>
                             {% if product.user_review %}
-                            <p class="card-text text-muted rating-star"><i class="fa-solid fa-star"></i> {{
-                                product.user_review }}</p>
+                            <p class="card-text text-muted rating-star"><i class="fa-solid fa-star"></i> 
+								{{ product.user_review }}</p>
                             {% else %}
                             <p class="card-text text-muted">No Ratings</p>
                             {% endif %}
