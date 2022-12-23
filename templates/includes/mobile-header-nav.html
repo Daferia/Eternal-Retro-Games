@@ -39,6 +39,7 @@
 			<a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
 			<a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
 			{% endif %}
+		</div>
 	</li>
 	<li class="nav-item"><a href="{% url 'view_cart' %}" class="{% if grand_total %}added-to-cart font-weight-bold{% else %}font-dark{% endif %} nav-link">
 			<div class="text-center">
