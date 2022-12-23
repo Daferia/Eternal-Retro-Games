@@ -32,7 +32,9 @@ def all_products(request):
             products = products.order_by(sortkey)
 
         if 'platform' in request.GET:
-            platforms = request.GET['platform'].split(',')
+            platform = request.GET['platform'].split(',')
+            platform_sort = '_'.join(platform)
+            platforms = [' '.join(platform_sort.split('_'))]
             products = products.filter(platform__in=platforms)
 
         if 'manufacturer' in request.GET:
@@ -51,7 +53,7 @@ def all_products(request):
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(
-                        developer__icontains=query)
+                developer__icontains=query)
             products = products.filter(queries)
 
             # if value is not found display this message
@@ -64,6 +66,7 @@ def all_products(request):
 
     context = {
         'products': products,
+        # 'platform_sort': platform_sort,
         'search_term': query,
         'current_sorting': current_sorting,
         'search_manufacturers': manufacturers,
