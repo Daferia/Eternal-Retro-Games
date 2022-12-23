@@ -22,13 +22,13 @@
 		</div>
 	</li>
 	<li class="nav-item dropdown">
-		<a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" id="user-optons" aria-expanded="false">
+		<a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" id="user-options-mobile" aria-expanded="false">
 			<div class="text-center dropdown-style font-dark">
 				<i class="fas fa-user fa-lg"></i>
 				<p class="my-0 ">My Account</p>
 			</div>
 		</a>
-		<div class="dropdown-menu border-0" aria-labelledby="user-options">
+		<div class="dropdown-menu border-0" aria-labelledby="user-options-mobile">
 			{% if request.user.is_authenticated %}
 			{% if request.user.is_superuser %}
 			<a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
