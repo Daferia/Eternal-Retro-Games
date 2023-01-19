@@ -148,8 +148,9 @@ header,
 
 /* Product admin Styling */
 
-#product-form-input .form-control{
-    color: var(--dark);
+.product-form-input,
+.contact-form-input {
+    color: var(--dark) ;
     border: 1px solid var(--dark);
 }
 
