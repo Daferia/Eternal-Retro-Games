@@ -30,9 +30,12 @@
                 Please fill in the form below and we will be happy to contact you directly and answer your questions as
                 soon as possible.
             </p>
-            <form method="post">
+            <form method="POST">
                 {% csrf_token %}
-                    {{form|crispy}}
+	
+				{% crispy form %}
+
+
                 <div class="text-end">
                     <button class="grey-button" type="submit">Submit</button>
                 </div>
