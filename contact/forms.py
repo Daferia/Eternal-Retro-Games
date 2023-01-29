@@ -1,8 +1,6 @@
 from django import forms
 from .models import ContactUs
 
-from crispy_forms.helper import FormHelper
-
 
 select_contact_method = (
 	('email', 'Email'),
@@ -11,6 +9,9 @@ select_contact_method = (
 
 class ContactForm(forms.ModelForm):
 
+	class Meta:
+		model = ContactUs
+		fields = '__all__'
 
 	first_name = forms.CharField(max_length=50)
 	last_name = forms.CharField(max_length=50)
@@ -24,7 +25,4 @@ class ContactForm(forms.ModelForm):
 		for field_name, field in self.fields.items():
 			field.widget.attrs['class'] = 'grey-font product-form-input'
 
-	class Meta:
-		model = ContactUs
-		fields = '__all__'
 	
