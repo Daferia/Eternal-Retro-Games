@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, reverse
 from .forms import ContactForm
 from django.contrib import messages
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import send_mail, send_mass_mail, BadHeaderError
 from django.http import HttpResponse
+from django.conf import settings
 
 
 def contact(request):
@@ -10,26 +11,25 @@ def contact(request):
 
     if request.method == 'POST':
         form = ContactForm(request.POST)
-
         if form.is_valid():
-            subject = "Website Inquiry"
-            body = {
-                'first_name': form.cleaned_data['first_name'],
-                'last_name': form.cleaned_data['last_name'],
-                'email': form.cleaned_data['email_address'],
-                'message': form.cleaned_data['message'],
+            form.save()
+            enquiry_info = form.cleaned_data['enquiry_info']
+            subject = f'Enquiry Message: {enquiry_info}'
+            message = 'Thank you for your message. One of our staff will get back to you shortly.'
+            email_from = settings.EMAIL_HOST_USER
+            email = form.cleaned_data['email_address']
+            client_message = form.cleaned_data['message']
 
-            }
-            email_confirmation = body.get('email')
-            message = "\n".join(body.values())
             messages.success(request,
-                             'Thank you for your message.\
-                             Message has been sent to the Admin.')
+                            'Thank you for your message.\
+                            Message has been sent to the Admin.')
             try:
-                send_mail(subject, message,
-                          'daferia@gmail.com', ['daferia@gmail.com'])
-                send_mail(subject,
-                          message, email_confirmation, [email_confirmation])
+                # send_mail(subject, message, client_message,
+                #         email_from, [email, email_from])
+
+                send_mass_mail(subject, message, client_message,
+                        email_from, [email, email_from])
+                
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect(reverse('home'))
