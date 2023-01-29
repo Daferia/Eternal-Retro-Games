@@ -24,11 +24,11 @@ def contact(request):
                             'Thank you for your message.\
                             Message has been sent to the Admin.')
             try:
-                # send_mail(subject, message, client_message,
-                #         email_from, [email, email_from])
-
-                send_mass_mail(subject, message, client_message,
+                send_mail(subject, message, client_message,
                         email_from, [email, email_from])
+
+                # send_mass_mail(subject, message, client_message,
+                #         email_from, [email, email_from])
                 
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
