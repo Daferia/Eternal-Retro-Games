@@ -1,4 +1,5 @@
 from django import forms
+from phonenumber_field.formfields import PhoneNumberField
 from .models import ContactUs
 
 
@@ -16,6 +17,9 @@ class ContactForm(forms.ModelForm):
 	first_name = forms.CharField(max_length=50)
 	last_name = forms.CharField(max_length=50)
 	email_address = forms.EmailField(max_length=150)
+	phone_number = PhoneNumberField(
+		widget=forms.TextInput(attrs={'placeholder': ('Please enter your country code if outside the UK...')}),
+		label=("Phone number"), required=False)
 	contact_method = forms.CharField(required=False, widget=forms.RadioSelect(choices=select_contact_method))
 	enquiry_info = forms.CharField(required=True)
 	message = forms.CharField(widget=forms.Textarea, max_length=2000)
