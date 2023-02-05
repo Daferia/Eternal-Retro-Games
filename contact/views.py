@@ -29,19 +29,6 @@ def contact(request):
                                 (subject, client_message, email_from, [email_from]),
                 )
                    send_mass_mail(email_messages)
-                # # Email to client
-                # send_mail(
-                # 	subject,
-                # 	message,
-                # 	email
-                # 	)
-
-                # # Email to admin email with client message
-                # send_mail(
-                # 	subject,
-                # 	client_message,
-                # 	email_from
-                # 	)
             
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
