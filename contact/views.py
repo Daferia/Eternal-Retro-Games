@@ -24,13 +24,19 @@ def contact(request):
                             'Thank you for your message.\
                             Message has been sent to the Admin.')
             try:
+				# Email to client
                 send_mail(
 					subject,
 					message,
-					client_message,
-					[email_from, email]
+					email
 					)
 
+				# Email to admin email with client message
+                send_mail(
+					subject,
+					client_message,
+					email_from
+					)
                 # send_mass_mail(subject, message, client_message,
                 #         email_from, [email, email_from])
                 
