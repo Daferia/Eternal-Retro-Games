@@ -17,29 +17,32 @@ def contact(request):
             subject = f'Enquiry Message: {enquiry_info}'
             message = 'Thank you for your message. One of our staff will get back to you shortly.'
             email_from = settings.EMAIL_HOST_USER
-            email = form.cleaned_data['email_address']
+            client_email = form.cleaned_data['email_address']
             client_message = form.cleaned_data['message']
 
             messages.success(request,
                             'Thank you for your message.\
                             Message has been sent to the Admin.')
             try:
-				# Email to client
-                send_mail(
-					subject,
-					message,
-					email
-					)
+                   email_messages = (
+                                (subject, message, email_from, [client_email]),
+                                (subject, client_message, email_from, [email_from]),
+                )
+                   send_mass_mail(email_messages)
+                # # Email to client
+                # send_mail(
+                # 	subject,
+                # 	message,
+                # 	email
+                # 	)
 
-				# Email to admin email with client message
-                send_mail(
-					subject,
-					client_message,
-					email_from
-					)
-                # send_mass_mail(subject, message, client_message,
-                #         email_from, [email, email_from])
-                
+                # # Email to admin email with client message
+                # send_mail(
+                # 	subject,
+                # 	client_message,
+                # 	email_from
+                # 	)
+            
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect(reverse('home'))
