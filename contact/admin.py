@@ -7,7 +7,8 @@ class ContactUsAdmin(admin.ModelAdmin):
         'first_name',
         'last_name',
         'email_address',
-		'date',
-	]
+        'date',
+        ]
+
 
 admin.site.register(ContactUs, ContactUsAdmin)
