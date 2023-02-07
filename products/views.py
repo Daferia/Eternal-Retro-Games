@@ -16,7 +16,6 @@ def all_products(request):
     platform_list = None
     query = None
     manufacturers = products.values('manufacturer__name').distinct()
-    platforms = None
     sort = None
     direction = None
 

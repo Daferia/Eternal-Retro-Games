@@ -22,6 +22,7 @@ The site uses the walkthrough Boutique Ado as part of a template layout but have
     * [Feature Planning](#feature-planning)
   * [Structure Plane](#structure-plane)
     * [User Stories](#user-stories)
+    * [Database Schema](#database-schema)
   * [Skeleton Plane](#skeleton-plane)
     * [Wireframes](#wireframes)
   * [Surface Plane](#surface-plane)
@@ -166,6 +167,11 @@ Further goals:
 | 21  | Staff | Delete a product                                                  | Remove items that aren't for sale anymore |
 | 22  | Superuser | delete users and set profile permission                       | Remove user and also be able to update users profiles |
 
+#### Database Schema
+
+I used a relational database as it was better suited for this project due to the timeframe.
+
+![Database Schema](static/documentation/wireframes/drawSQL_dbschema.png)
 
 \
 &nbsp;
@@ -382,6 +388,8 @@ sqlite3 for development - default with Django
 [Pipenv](https://pipenv.pypa.io/en/latest/index.html) - Pipenv is a tool that aims to bring the best of all packaging worlds (bundler, composer, npm, cargo, yarn, etc.) to the Python world.
 
 [Tiny PNG](https://tinypng.com/) - To compress images used in the README.
+
+[DrawSQL](https://drawsql.app/) - To create the database schema for the README.
 
 ### Stripe
 
