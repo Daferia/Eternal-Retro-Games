@@ -32,9 +32,7 @@ def all_products(request):
 
         if 'platform' in request.GET:
             platform = request.GET['platform'].split(',')
-            platform_sort = '_'.join(platform)
-            platforms = [' '.join(platform_sort.split('_'))]
-            products = products.filter(platform__in=platforms)
+            products = products.filter(platform__in=platform)
 
         if 'manufacturer' in request.GET:
             manufacturers = request.GET['manufacturer'].split(',')
@@ -65,7 +63,6 @@ def all_products(request):
 
     context = {
         'products': products,
-        # 'platform_sort': platform_sort,
         'search_term': query,
         'current_sorting': current_sorting,
         'search_manufacturers': manufacturers,
