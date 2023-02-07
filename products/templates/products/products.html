@@ -55,8 +55,10 @@
                     <div class="sort-select-wrapper">
                         <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                            <option value="developer_asc" {% if current_sorting == 'developer_asc' %}selected{% endif %}>Developer (low to high)</option>
-                            <option value="developer_desc" {% if current_sorting == 'developer_desc' %}selected{% endif %}>Developer (high to low)</option>
+                            <option value="selling_price_asc" {% if current_sorting == 'selling_price_asc' %}selected{% endif %}>Selling Price (low to high)</option>
+                            <option value="selling_price_desc" {% if current_sorting == 'selling_price_desc' %}selected{% endif %}>Selling Price (high to low)</option>
+                            <option value="developer_asc" {% if current_sorting == 'developer_asc' %}selected{% endif %}>Developer (A to Z)</option>
+                            <option value="developer_desc" {% if current_sorting == 'developer_desc' %}selected{% endif %}>Developer (Z to A)</option>
                             <option value="user_review_asc" {% if current_sorting == 'user_review_asc' %}selected{% endif %}>Rating (low to high)</option>
                             <option value="user_review_desc" {% if current_sorting == 'user_review_desc' %}selected{% endif %}>Rating (high to low)</option>
                             <option value="year_of_release_asc" {% if current_sorting == 'year_of_release_asc' %}selected{% endif %}>Year of Release (Older-Recent)</option>
