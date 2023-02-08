@@ -6,6 +6,7 @@ Eternal Retro Game is my first full stack website built using Django, Python, HT
 
 This project was created as part of my fourth and final project for my Level 5 Diploma in Web Application Development. This course was provided by Code Insitute.
 The site uses the walkthrough Boutique Ado as part of a template layout but have added some of my code and logic as well as other code snippets adjusted for my needs. Any other code that was used is either credited or mentioned in the credits.
+
 ---
 
 [View the live website deployed on Heroku](https://eternal-retro-games.herokuapp.com/)
@@ -69,10 +70,7 @@ The site uses the walkthrough Boutique Ado as part of a template layout but have
 
 ---
 
-responsive site image here
-
 ---
-
 ## User Experience
 
 ### Strategy
