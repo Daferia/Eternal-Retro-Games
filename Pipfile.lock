@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c22a236aa139dc72503dee0ad74615a7c65b4a0fb01f0926f3f7146c58135aa0"
+            "sha256": "957cf063af6f25c797ec77e2e91dcc13da6f9bf8376ff5006f7dc99a59c2dbd9"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -22,6 +22,7 @@
                 "sha256:4a29362a6acebe09bf1d6640db38c1dc3d9217c68e6f9f6204d72667fc19a424"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.7'",
             "version": "==3.5.2"
         },
         "babel": {
@@ -189,11 +190,12 @@
         },
         "django": {
             "hashes": [
-                "sha256:26d0260c2fb8121009e62ffc548b2398dea2522b6454208a852fb0ef264c206c",
-                "sha256:56343019a9fd839e2e5bf203daf45f25af79d5bffa4c71d56eae4f4404d82ade"
+                "sha256:04ab3f6f46d084a0bba5a2c9a93a3a2eb3fe81589512367a75f79ee8acf790ce",
+                "sha256:94a3f471e833c8f124ee7a2de11e92f633991d975e3fa5bdd91e8abd66426318"
             ],
             "index": "pypi",
-            "version": "==4.1.10"
+            "markers": "python_version >= '3.8'",
+            "version": "==4.1.13"
         },
         "django-allauth": {
             "hashes": [
@@ -486,6 +488,7 @@
                 "sha256:69ca804846bb114d2ec380e4360a8a340db83f0ccf3afceeb1404df028f57268"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.5'",
             "version": "==0.4.3"
         },
         "stripe": {
